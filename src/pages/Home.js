@@ -10,9 +10,6 @@ import {
 import {
   Box,
   Button,
-  ButtonGroup,
-  Center,
-  Container,
   Flex,
   Grid,
   GridItem,
@@ -23,17 +20,19 @@ import {
 import avater from "../assets/images/animate.png"
 import { Typewriter } from "react-simple-typewriter";
 
+import Herosection from "../components/Herosection";
+
 export default function Home() {
   return (
-    
+    <Box> 
       <Grid templateColumns="repeat(12, 1fr)"  w="100%">
-        <GridItem justifyContent="cener" colSpan={{ base: 12, md:6, xl: 6 }}  w="100%">
-<Box  my={6}  >
-  <Image  src={avater}/>
+        <GridItem  my={6} justifyContent="cener" colSpan={{ base: 12, md:6, xl: 6 }}  >
+<Box     >
+  <Image   margin="auto" src={avater}/>
 </Box>
 
-        </GridItem>
-        <GridItem bg="brand.300" colSpan={{ base: 12, md: 6, xl: 6}} textAlign="center">
+        </GridItem >
+        <GridItem  my={6} colSpan={{ base: 12, md: 6, xl: 6}} textAlign="center">
           <Text as="b" fontSize="xl">
             Hay!
           </Text>
@@ -133,7 +132,8 @@ export default function Home() {
           </Stack>
         </GridItem>
       </Grid>
-    
+    <Herosection/>
+    </Box>
   );
 }
 const heroLink = {
