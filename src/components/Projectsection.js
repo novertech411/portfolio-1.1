@@ -6,12 +6,16 @@ import {
   CardFooter,
   Divider,
   Flex,
-  Heading,
   Image,
   SimpleGrid,
   Spacer,
+  Stack,
   Text,
 } from "@chakra-ui/react";
+import express from "../assets/images/express.png"
+import node from "../assets/images/nodejs.svg"
+import mongodb from "../assets/images/mongodb.svg"
+import react from "../assets/images/react.svg"
 import { ViewIcon } from "@chakra-ui/icons";
 import { BiDetail } from "react-icons/bi";
 import projectImage from "../assets/images/project1.webp";
@@ -34,36 +38,41 @@ export default function Projectsection() {
           _hover={{ background: "brand.100" }}
         >
           View More
-        </Button>{" "}
+        </Button>
       </Flex>
 
       <SimpleGrid
         px="0.5rem"
         pt="4rem"
         spacing={10}
-        minChildWidth="250px"
+        maxWidth="550px"
         justifyContent="center"
       >
-        <Card mx="1rem" bg="dark.300" color="white">
+        <Card mx="0.5rem" bg="dark.300" color="white">
           <Image borderTopRadius="5px" objectFit="cover" src={projectImage} />
           <CardBody>
-            <Flex>
-              {" "}
-              <Heading>Personal Portfo.....</Heading>
-              <Flex bg="#386163" borderRadius="20px">
-                {/* <Image w="19px" h="19px" src={} /> 
-                <Image w="19px" h="19px" src={} /> 
-                <Image w="19px" h="19px" src={} /> 
-                <Image w="19px" h="19px" src={} />  */}
+            <Stack direction='row' p="0px" justifyContent="space-between" >
+              
+              <Text p="0px" fontSize="2xl"  >Personal Portfo...</Text>
+
+              
+              <Flex  p="7px" justifyItems="center" bg="#386163" borderRadius="20px">
+              
+                <Image  Width="30px" src={react} /> 
+                <Image Width="30px" src={mongodb} /> 
+                <Image  Width="30px" src={node} /> 
+                <Image  Width="30px" src={express} /> 
+              
               </Flex>
-            </Flex>
+            </Stack>
           </CardBody>
           <Divider color="dark.100"/>
           <CardFooter>
-            <Flex p="auto" alignContent="center" width="100%">
-              <Button variant="ghost" leftIcon={<BiDetail />}> Details</Button>
-              <Button variant="ghost" leftIcon={<ViewIcon />}>Live Preview</Button>
-            </Flex>
+            <Stack direction='row' spacing="20" justifyContent="center" width="100%"  >
+              <Button   variant="ghost" leftIcon={<BiDetail />}> Details</Button> 
+
+              <Button   variant="ghost" leftIcon={<ViewIcon />}>Live Preview</Button>
+            </Stack>
           </CardFooter>
         </Card>
       </SimpleGrid>
