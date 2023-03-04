@@ -21,6 +21,7 @@ import avater from "../assets/images/animate.png"
 import { Typewriter } from "react-simple-typewriter";
 
 import Herosection from "../components/Herosection";
+import Projectsection from "../components/Projectsection";
 
 export default function Home() {
   return (
@@ -133,6 +134,7 @@ export default function Home() {
         </GridItem>
       </Grid>
     <Herosection/>
+    <Projectsection />
     </Box>
   );
 }
