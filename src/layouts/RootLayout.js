@@ -3,6 +3,7 @@ import { Link, Outlet } from "react-router-dom";
 import Navbar from "../components/Navbar";
 import { ArrowForwardIcon } from '@chakra-ui/icons'
 import "../layouts/RootLayout.css"
+import Footersection from "../components/Footersection";
 export default function RootLayout() {
   return (
     <Box bg="dark.100"  px="0.5rem" color="white"  minHeight= "100vh" className="layout" >
@@ -11,6 +12,7 @@ export default function RootLayout() {
       </Box>
       <Navbar />
       <Outlet />
+      <Footersection />
     </Box>
   );
 }
