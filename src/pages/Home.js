@@ -22,11 +22,11 @@ import { Typewriter } from "react-simple-typewriter";
 
 import Herosection from "../components/Herosection";
 import Projectsection from "../components/Projectsection";
-
+import Hiresection from "../components/Hiresection";
 export default function Home() {
   return (
     <Box> 
-      <Grid templateColumns="repeat(12, 1fr)"  w="100%">
+      <Grid templateColumns="repeat(12, 1fr)"  >
         <GridItem  my={6} justifyContent="cener" colSpan={{ base: 12, md:6, xl: 6 }}  >
 <Box     >
   <Image   margin="auto" src={avater}/>
@@ -135,6 +135,7 @@ export default function Home() {
       </Grid>
     <Herosection/>
     <Projectsection />
+    <Hiresection />
     </Box>
   );
 }
