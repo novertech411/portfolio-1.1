@@ -16,9 +16,9 @@ export default function Footersection() {
     <Box >
       <Box bg="black">
         <Box width="80%"  margin="auto" mt="1.5rem" py="4rem">
-          <Flex direction={{base:'column', md:'row' , xl: 'row' }} >
+          <Flex direction={{base:'column', md:'row' , xl: 'row' }} mb="5" >
             <vStack  >
-              <Text as="b" fontSize="2xl"  >Let's Connect</Text>
+              <Text as="b" fontSize="3xl"  >Let's Connect</Text>
               <HStack as="b" justifyItems="center">
                <Text>Visits:</Text>  <Text ml="1" py='0.5' px="1.5" borderRadius="10px" color={'black'} bg="#ffcc00">
                   400938
@@ -27,7 +27,7 @@ export default function Footersection() {
               </HStack>
              
             </vStack>
-            <HStack mt="0.6rem" mb="1.5rem"  textAlign="center">
+            <HStack mt="0.6rem" mb="1.5rem" margin={{md:'auto'}}>
               <NavLink>
               
                 <IconButton fontSize="4xl" border="none" variant={"outline"} icon={<AiOutlineTwitter />} />{" "}

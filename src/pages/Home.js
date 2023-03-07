@@ -17,27 +17,28 @@ import {
   Stack,
   Text,
 } from "@chakra-ui/react";
-import avater from "../assets/images/animate.png"
+import avater from "../assets/images/animate.png";
 import { Typewriter } from "react-simple-typewriter";
 
 import Herosection from "../components/Herosection";
 import Projectsection from "../components/Projectsection";
 import Hiresection from "../components/Hiresection";
+import { NavLink } from "react-router-dom";
 export default function Home() {
   return (
-    <Box> 
-      <Grid templateColumns="repeat(12, 1fr)"  >
-        <GridItem  my={6} justifyContent="cener" colSpan={{ base: 12, md:6, xl: 6 }}  >
-<Box     >
-  <Image   margin="auto" src={avater}/>
-</Box>
+    <Box>
 
-        </GridItem >
-        <GridItem  my={6} colSpan={{ base: 12, md: 6, xl: 6}} textAlign="center">
+      <Box  width={{base:'95%', md:'90%' , xl: '70%' }} margin="auto" >
+      <Flex   flexDirection={{base:'column' , md:'row'}} justifyContent='space-around'    >
+       
+        <Box
+         
+         textAlign={{base:"center", md:"left"}}
+        >
           <Text as="b" fontSize="xl">
             Hay!
           </Text>
-          <Text fontSize="5xl">
+          <Text fontSize="4xl">
             I'm <span style={{ color: "#ff5403" }}>Sholaye</span>
           </Text>
           <Box
@@ -58,34 +59,29 @@ export default function Home() {
               delaySpeed={2000}
             />
           </Box>
-          <Box fontSize="2xl" color="brand.200">
+          <Box fontSize="1xl" color="brand.200">
             I have a passion for technology.
           </Box>
-          <Flex
-            justifyContent="center"
-            m="5"
+          <Box
+          
+            my="4"
             color="brand.200"
-            fontSize="2xl"
+           
             flexDirection="row"
           >
-            <a style={heroLink}>
-              Know More&nbsp;
-              <span style={{ marginTop: "7px" }}>
-                <AiOutlineLink />
-              </span>
-            </a>
-            &nbsp;about me
-          </Flex>
-          <Flex fontSize="22" justifyContent="center">
-            {" "}
-            Follow me &nbsp;{" "}
+           <NavLink><Button  fontSize="1xl" bg="none" p="0" color="brand.100" rightIcon={< AiOutlineLink />}>know More</Button></NavLink>
+           about me
+          </Box>
+          <Flex fontSize="22" justifyContent={{base:"center", md:"left"}}>
+           
+            Follow me &nbsp;
             <Flex mt="1px" fontSize={34}>
-              {" "}
+             
               <a style={{ hover: { color: "#0d6efd" } }}>
                 <AiOutlineTwitter />
               </a>
               <a>
-                {" "}
+               
                 <AiFillGithub />
               </a>{" "}
               <a>
@@ -95,16 +91,14 @@ export default function Home() {
             </Flex>{" "}
           </Flex>
 
-          <Stack
-            m={8}
+          <Flex
+            my={8}
             direction="row"
-            spacing={5}
-            align="center
-          "
-            justifyContent="center"
+            gap={5}
+            justifyContent={{base:"center", md:"left"}}
           >
             <Button
-              fontSize="22"
+              fontSize="19"
               boxShadow="rgb(255 84 3) 0px 2px 8px 0px;"
               bg="brand.100"
               borderRadius={10}
@@ -112,12 +106,13 @@ export default function Home() {
               px={5}
               fontWeight="light"
               _hover={{ background: "brand.100" }}
+              leftIcon={ <AiOutlineMail />}
             >
-              <AiOutlineMail />
-              &nbsp;Email me
+             
+            Email me
             </Button>
             <Button
-              fontSize="21"
+              fontSize="19"
               boxShadow="rgb(255 84 3) 0px 2px 8px 0px;"
               colorScheme="brand.100"
               py={8}
@@ -127,15 +122,22 @@ export default function Home() {
               _hover={{ background: "brand.100" }}
               borderColor="brand.100"
               fontWeight="light"
+              leftIcon={<AiOutlineCloudDownload />}
             >
-              <AiOutlineCloudDownload /> &nbsp;Resume
+               Resume
             </Button>
-          </Stack>
-        </GridItem>
-      </Grid>
-    <Herosection/>
-    <Projectsection />
-    <Hiresection />
+          </Flex>
+        </Box>
+        <Box   >
+          <Box >
+            <Image width={{base:'80%', md:'80%' , xl: '100%' }}   margin="auto" src={avater} />
+          </Box>
+        </Box>
+      </Flex>
+      <Herosection />
+      <Projectsection />
+      <Hiresection />
+      </Box>
     </Box>
   );
 }
