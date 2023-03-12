@@ -3,7 +3,7 @@
 }
 
 #menu_button {
-    width: 35px;
+    width: 27px;
     overflow: hidden;
   } 
   
@@ -24,7 +24,7 @@
     position: absolute;
     left: 0;
     width: 100%;
-    height: 3px;
+    height: 2px;
     background-color: #fff;
   }
   
@@ -35,25 +35,25 @@
   }
   
   #menu_label:before {
-    top: 0;
+    top: 7px;
   }
   
   #menu_label:after {
-    top: 12px;
+    top: 14px;
   }
   
   #menu_text_bar {
-    top: 24px;
+    top: 21px;
   }
   
   #menu_text_bar:before {
     content: "MENU";
     position: absolute;
-    top: 7px;
+    top: 6px;
     right: 0;
     left: 0;
     color: #fff;
-    font-size: 10px;
+    font-size: 8px;
     font-weight: bold;
     font-family: "Montserrat", Arial, Helvetica, sans-serif;
     text-align: center;

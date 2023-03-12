@@ -19,6 +19,7 @@ import react from "../assets/images/react.svg"
 import { ViewIcon } from "@chakra-ui/icons";
 import { BiDetail } from "react-icons/bi";
 import projectImage from "../assets/images/project1.webp";
+import Cardbar from "./Cardbar";
 export default function Projectsection() {
   return (
     <Box py="34px" mx="auto" width="90%">
@@ -51,12 +52,12 @@ export default function Projectsection() {
         <Card mx="0.5rem" bg="dark.300" color="white">
           <Image borderTopRadius="5px" objectFit="cover" src={projectImage} />
           <CardBody>
-            <Stack direction='row' p="0px" justifyContent="space-between" >
+            <Stack direction='row' p="0px" gap={4} >
               
               <Text p="0px" fontSize="2xl"  >Personal Portfo...</Text>
 
               
-              <Flex  p="7px" justifyItems="center" bg="#386163" borderRadius="20px">
+              <Flex   p="7px" justifyItems="center" bg="#386163" borderRadius="20px">
               
                 <Image  Width="30px" src={react} /> 
                 <Image Width="30px" src={mongodb} /> 
@@ -75,6 +76,8 @@ export default function Projectsection() {
             </Stack>
           </CardFooter>
         </Card>
+
+        <Cardbar />
       </SimpleGrid>
     </Box>
   );
