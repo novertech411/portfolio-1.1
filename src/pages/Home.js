@@ -11,8 +11,7 @@ import {
   Box,
   Button,
   Flex,
-  Grid,
-  GridItem,
+
   IconButton,
   Image,
   Stack,
@@ -20,15 +19,29 @@ import {
 } from "@chakra-ui/react";
 import avater from "../assets/images/animate.png";
 import { Typewriter } from "react-simple-typewriter";
-
 import Herosection from "../components/Herosection";
 import Projectsection from "../components/Projectsection";
 import Hiresection from "../components/Hiresection";
 import { NavLink } from "react-router-dom";
+import "../components/bubble.css"
+import { useState } from "react";
+
 export default function Home() {
+
+  const [isActive, setActive] = useState("false");
+
+ function handleClick () {
+ 
+   setActive(!isActive);
+  
+ }
+
+
+
+
   return (
     <Box>
-      <Box width={{ base: "95%", md: "80%", xl: "80%" }} mx="auto">
+      <Box p={{xl:"5%"}}  width={{ base: "80%", md: "75%", xl: "75%" }} mx="auto">
         <Flex flexDirection={{ base: "column", md: "row" }}    justifyContent="space-between">
         
           <Box textAlign={{ base: "center", md: "left" }}    ml={{md:'2rem' , xl:'2rem'}} py='1rem'>
@@ -99,6 +112,12 @@ export default function Home() {
                 fontWeight="light"
                 _hover={{ background: "brand.100" }}
                 leftIcon={<AiOutlineMail />}
+                className= {"confetti-button animate"}
+                
+                  
+                id="button"
+                onClick={handleClick}
+                
               >
                 Email me
               </Button>  </NavLink>
@@ -115,6 +134,7 @@ export default function Home() {
                 borderColor="brand.100"
                 fontWeight="light"
                 leftIcon={<AiOutlineCloudDownload />}
+                className= {"confetti-button animate"}
               >
                 Resume
               </Button>
@@ -150,3 +170,4 @@ const heroLink = {
 //   {" "}
 //   <AiFillMediumSquare />
 // </a>
+///*{`confetti-button ${isActive ? "animate":"null"}` }  */

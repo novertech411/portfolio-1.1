@@ -15,7 +15,7 @@ export default function Footersection() {
   return (
     <Box >
       <Box bg="black">
-        <Box width="80%"  margin="auto" mt="1.5rem" py="4rem">
+        <Box width="80%"  margin="auto" py="4rem">
           <Flex direction={{base:'column', md:'row' , xl: 'row' }} mb="5" >
             <vStack  >
               <Text as="b" fontSize="3xl"  >Let's Connect</Text>
