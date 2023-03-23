@@ -30,12 +30,14 @@ export default function Projectsection() {
         </Button>
       </Flex>
 
-      <SimpleGrid pt="4rem" spacing="20px" minChildWidth="300px"
+      <Flex pt="4rem"gap={10}
+   flexWrap="wrap"
+   justifyContent={{base:"center", md:"left"}}
       
-      justifyItems="center"
+     
       >
         <Cardbar /> <Cardbar />
-      </SimpleGrid>
+      </Flex>
     </Box>
   );
 }

@@ -31,7 +31,7 @@ export default function Cardbar() {
           </CardBody>
           <Divider color="dark.100"/>
           <CardFooter p="5px">
-            <Stack direction='row'  justifyContent="center" width="100%"  gap={{base:"12" , md:"5"}} >
+            <Stack direction='row'  justifyContent="center" width="100%"  gap={{base:"20%" , md:"5"}} >
               <Button px="0px"  _hover={ { background:"dark.300"  } }  variant="ghost"  leftIcon={<BiDetail />}>Details</Button> 
  
               <Button  px="0px"  _hover={ { background:"dark.300"  } }   variant="ghost"  leftIcon={<ViewIcon />}>Live Preview</Button>
