@@ -18,22 +18,24 @@ import collaborative from "../assets/images/collaborative.png";
 import { AiOutlineMail } from "react-icons/ai";
 export default function Hiresection() {
   return (
-    <Box>
-      <Box px="0.5rem">
-        <HStack justify="center" m="10" fontSize="2xl" as="b" mx="2rem">
+    <Box    my="6rem"  mx="auto"  width={{base:"100%", md:"85%"}}>
+      <Box px="0.5rem"  >
+        <HStack justify="center" my="4rem" fontSize="2xl" as="b" mx="2rem">
           {" "}
           <Text color="#6fc2c5">Why Hire Me</Text>{" "}
           <Text color="brand.100">?</Text>
         </HStack>
 
-        <SimpleGrid minChildWidth="17rem" spacing="">
-          <Box px="3rem">
-            <Image
+        <SimpleGrid minChildWidth={{base:"200px" , md:"270" , xl:"270"}} spacing="2">
+          <Box>
+            <Box  px="2rem">  <Image
               margin="auto"
               borderRadius="45px"
               bg="white"
               src={communication}
-            />
+              
+            /></Box>
+          
             <Box textAlign="center" my="8">
               <Text as="b" fontSize="2xl" color="brand.300">
                 Communicative
@@ -44,13 +46,17 @@ export default function Hiresection() {
               </Text>
             </Box>
           </Box>
-          <Box px="3rem">
+          <Box px="rem">
+
+            <Box  px="2rem"> 
             <Image
               margin="auto"
               borderRadius="45px"
               bg="white"
               src={collaborative}
             />
+            </Box>
+           
             <Box textAlign="center" my="8">
               <Text as="b" fontSize="2xl" color="brand.300">
                 collaborative
@@ -60,8 +66,9 @@ export default function Hiresection() {
               </Text>
             </Box>
           </Box>
-          <Box px="3rem">
-            <Image margin="auto" borderRadius="45px" bg="white" src={work} />
+          <Box px="0rem">
+            <Box px="2rem">  <Image margin="auto" borderRadius="45px" bg="white" src={work} /></Box>
+           
             <Box textAlign="center" my="8">
               <Text as="b" fontSize="2xl" color="brand.300">
                 Workaholic
@@ -71,13 +78,9 @@ export default function Hiresection() {
               </Text>
             </Box>
           </Box>
-          <Box px="3rem">
-            <Image
-              margin="auto"
-              borderRadius="45px"
-              bg="white"
-              src={motivation}
-            />
+          <Box px="0rem">
+          
+              <Box px="2rem">  <Image margin="auto" borderRadius="45px" bg="white" src={motivation} /></Box>
             <Box textAlign="center" my="8">
               <Text as="b" fontSize="2xl" color="brand.300">
                 self Motivated
@@ -90,7 +93,7 @@ export default function Hiresection() {
         </SimpleGrid>
       </Box>
       {/* hire  me button and email button*/}
-      <Box px="0.5rem">
+      <Box px="0.5rem"    my="6rem">
         <Grid  templateColumns="repeat(12, 1fr)" bg="#cd921e"  borderRadius="25px" p="4rem"  >
           <GridItem colSpan={{ base: 12, md:6, xl: 6 }} as="b"  fontSize="30" textAlign="center">
             

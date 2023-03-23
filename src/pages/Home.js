@@ -41,8 +41,8 @@ export default function Home() {
 
   return (
     <Box>
-      <Box p={{xl:"5%"}}  width={{ base: "80%", md: "75%", xl: "75%" }} mx="auto">
-        <Flex flexDirection={{ base: "column", md: "row" }}    justifyContent="space-between">
+      <Box p={{basc:"0%",xl:"5%"}}  width={{ base: "90%", md: "75%", xl: "75%" }} mx="auto">
+        <Flex flexDirection={{ base: "column", md: "row" }}    justifyContent={{md:"space-evenly",xl:"space-evenly"}}>
         
           <Box textAlign={{ base: "center", md: "left" }}    ml={{md:'2rem' , xl:'2rem'}} py='1rem'>
             <Text as="b" fontSize="xl">
@@ -73,7 +73,7 @@ export default function Home() {
               I have a passion for technology.
             </Box>
             <Box my="3" color="brand.200" flexDirection="row">
-              <NavLink  to=''>
+              <NavLink  to='/about'>
                 <Button
                   fontSize="1xl"
                   variant="unstyled"

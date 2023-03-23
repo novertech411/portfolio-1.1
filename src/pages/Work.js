@@ -1,4 +1,4 @@
-import { Box, Button, Flex, SimpleGrid, Spacer, Text } from '@chakra-ui/react'
+import { Box, Button, Center, Flex, SimpleGrid, Spacer, Text } from '@chakra-ui/react'
 import React from 'react'
 import { Icon } from '@chakra-ui/react'
 import { ArrowForwardIcon } from '@chakra-ui/icons'
@@ -28,18 +28,18 @@ export default function Work() {
           See All Project 
         </Button>
       </Flex>
-      <SimpleGrid
-      pt={14}
-     px="5.5%"
-     minChildWidth={{base:"200px", md:"250px" , xl:"300px"}} 
-     spacing='60px'
-       
+      <Flex
+       mt="5rem"
+       mb="5rem"
+       gap={10}
+       flexWrap="wrap"
+       justifyContent={{base:"center", md:"left"}}
       >
 <Cardbar/>
 <Cardbar/>
 <Cardbar/>
 
-      </SimpleGrid>
+      </Flex>
 
 
       <Flex justifyContent="center"  mt="7" >
@@ -62,18 +62,21 @@ export default function Work() {
         </Button>
       </Flex>
 
-      <SimpleGrid
-      pt={14}
-     px="5.5%"
-     minChildWidth={{base:"200px", md:"250px" , xl:"300px"}} 
-     spacing='60px'
+      <Flex
+      mt="5rem"
+   mb="5rem"
+   gap={10}
+   flexWrap="wrap"
+   justifyContent={{base:"center", md:"left"}}
+   
+    
        
       >
 <Cardbar />
 <Cardbar />
 
 
-      </SimpleGrid>
+      </Flex>
 
       </Box>
   )

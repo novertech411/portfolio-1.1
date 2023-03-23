@@ -4,8 +4,8 @@ import React from 'react'
 
 export default function heroSection() {
   return (
-    <Box  px={{  base:'8', md:'2%', xl:'5%'}} > 
-    <Grid maxWidth={{base:'30rem', md:'100%'}}   m="auto" borderRadius="45px"  bg="dark.200" p="2rem" templateColumns="repeat(12, 1fr)" >
+    <Box  px={{  base:'0', md:'2%', xl:'8%'}} my="4rem" > 
+    <Grid width={{base:'100%', md:'100%',}}   m="auto" borderRadius="45px"  bg="dark.200" p="1rem" templateColumns="repeat(12, 1fr)" >
     <GridItem  p="10px" colSpan={{ base: 12, md:6, xl: 6 }}>
     <Image  justify="center" src={hero}/>
     </GridItem>
