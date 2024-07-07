@@ -9,28 +9,23 @@ import { useState } from "react";
 
 export default function RootLayout() {
  
-  const [visible, setVisible] = useState(false)
-
-  const toggleVisible =() => {
-
+  const toggleVisible = () => {
     const scrolled = document.documentElement.scrollTop;
-   if (scrolled > 300){
-    setVisible(true)
-   }else if (scrolled < 300){
-    setVisible(false)
-    console.log("king")
+    if (scrolled > 300) {
+      setVisible(true);
+    } else if (scrolled < 300) {
+      setVisible(false);
+      console.log("king");
    }
   };
 
-const scrollToTop =() => {
+  const scrollToTop = () => {
   window.scrollTo({
     top: 0,
-    behavior: 'smooth'
-  })
-
-  
-}
-window.addEventListener('scroll', toggleVisible);
+      behavior: "smooth",
+    });
+  };
+  window.addEventListener("scroll", toggleVisible);
 
   return (
     <Box bg="dark.100" color="white" minHeight="100vh" className="layout">

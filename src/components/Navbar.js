@@ -11,7 +11,7 @@ import {
 } from "@chakra-ui/react";
 import { useState } from "react";
 import { NavLink } from "react-router-dom";
-import { Input } from "@chakra-ui/react";
+import { Input } from "@chakra-ui/react"
 import Hamburger from "./hamburger/Hamburger";
 import "./hamburger/hamburger.css";
 import { motion, Variants } from "framer-motion";
@@ -125,7 +125,7 @@ export default function Navbar() {
           </HStack>
         </Show>
         <Show below="md">
-          <Box pos="fixed" right="10" zIndex={2}>
+          <Box pos="fixed" right="7" zIndex={3}>
             <Circle
               p="2"
               bg="brand.100"
@@ -156,7 +156,7 @@ export default function Navbar() {
           bgGradient="linear( to-bl  , #000000 5% , #782701 )"
           w="100%"
           h="100%"
-          zIndex={1}
+          zIndex={2}
           top="0"
           left="0"
           flexDirection="column"
