@@ -8,7 +8,8 @@ import { FaArrowCircleUp } from "react-icons/fa";
 import { useState } from "react";
 
 export default function RootLayout() {
- 
+  const [visible, setVisible] = useState(true);
+
   const toggleVisible = () => {
     const scrolled = document.documentElement.scrollTop;
     if (scrolled > 300) {
@@ -16,12 +17,12 @@ export default function RootLayout() {
     } else if (scrolled < 300) {
       setVisible(false);
       console.log("king");
-   }
+    }
   };
 
   const scrollToTop = () => {
-  window.scrollTo({
-    top: 0,
+    window.scrollTo({
+      top: 0,
       behavior: "smooth",
     });
   };
@@ -43,18 +44,18 @@ export default function RootLayout() {
         <Icon as={ArrowForwardIcon} />
       </Flex>
 
-      { visible && 
-      <Icon
-        pos="fixed"
-        zIndex={2}
-        bottom="20"
-        right="10"
-        color="#6fc2c5"
-        fontSize="3rem"
-        as={FaArrowCircleUp} 
-        onClick={scrollToTop}
-       
-      /> }
+      {visible && (
+        <Icon
+          pos="fixed"
+          zIndex={2}
+          bottom="20"
+          right="10"
+          color="#6fc2c5"
+          fontSize="3rem"
+          as={FaArrowCircleUp}
+          onClick={scrollToTop}
+        />
+      )}
 
       <Navbar />
       <Outlet />

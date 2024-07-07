@@ -11,7 +11,6 @@ import {
   Box,
   Button,
   Flex,
-
   IconButton,
   Image,
   Stack,
@@ -23,28 +22,32 @@ import Herosection from "../components/Herosection";
 import Projectsection from "../components/Projectsection";
 import Hiresection from "../components/Hiresection";
 import { NavLink } from "react-router-dom";
-import "../components/bubble.css"
+import "../components/bubble.css";
 import { useState } from "react";
 
 export default function Home() {
-
   const [isActive, setActive] = useState("false");
 
- function handleClick () {
- 
-   setActive(!isActive);
-  
- }
-
-
-
+  function handleClick() {
+    setActive(!isActive);
+  }
 
   return (
     <Box>
-      <Box p={{basc:"0%",xl:"5%"}}  width={{ base: "90%", md: "75%", xl: "75%" }} mx="auto">
-        <Flex flexDirection={{ base: "column", md: "row" }}    justifyContent={{md:"space-evenly",xl:"space-evenly"}}>
-        
-          <Box textAlign={{ base: "center", md: "left" }}    ml={{md:'2rem' , xl:'2rem'}} py='1rem'>
+      <Box
+        p={{ basc: "0%", xl: "5%" }}
+        width={{ base: "90%", md: "75%", xl: "75%" }}
+        mx="auto"
+      >
+        <Flex
+          flexDirection={{ base: "column", md: "row" }}
+          justifyContent={{ md: "space-evenly", xl: "space-evenly" }}
+        >
+          <Box
+            textAlign={{ base: "center", md: "left" }}
+            ml={{ md: "2rem", xl: "2rem" }}
+            py="1rem"
+          >
             <Text as="b" fontSize="xl">
               Hay!
             </Text>
@@ -73,79 +76,104 @@ export default function Home() {
               I have a passion for technology.
             </Box>
             <Box my="3" color="brand.200" flexDirection="row">
-              <NavLink  to='/about'>
+              <NavLink to="/about">
                 <Button
                   fontSize="1xl"
                   variant="unstyled"
                   p="0"
-                  _hover={{color:'#b53b02'}}
+                  _hover={{ color: "#b53b02" }}
                   color="brand.100"
-                  rightIcon={<AiOutlineLink />}>
-                know More
+                  rightIcon={<AiOutlineLink />}
+                >
+                  know More
                 </Button>
               </NavLink>
               &nbsp;about me
             </Box>
             <Flex fontSize="18" justifyContent={{ base: "center", md: "left" }}>
-              <Box  my="auto" >  Follow me &nbsp; </Box>
-             
-              <Flex >
-                <NavLink><IconButton variant="unstyled"   fontSize={30} _hover={{color:'#26a7de'}} icon={ <AiOutlineTwitter /> }/> </NavLink>
-                <NavLink><IconButton variant="unstyled"   fontSize={30} _hover={{color:'#6c757d'}} icon={  <AiFillGithub /> }/> </NavLink>
-                <NavLink><IconButton variant="unstyled"   fontSize={30} _hover={{color:'#6c757d'}} icon={  <AiFillMediumSquare /> }/> </NavLink>
-                </Flex>
+              <Box my="auto"> Follow me &nbsp; </Box>
+
+              <Flex>
+                <NavLink>
+                  <IconButton
+                    variant="unstyled"
+                    fontSize={30}
+                    _hover={{ color: "#26a7de" }}
+                    icon={<AiOutlineTwitter />}
+                  />{" "}
+                </NavLink>
+                <NavLink>
+                  <IconButton
+                    variant="unstyled"
+                    fontSize={30}
+                    _hover={{ color: "#6c757d" }}
+                    icon={<AiFillGithub />}
+                  />{" "}
+                </NavLink>
+                <NavLink>
+                  <IconButton
+                    variant="unstyled"
+                    fontSize={30}
+                    _hover={{ color: "#6c757d" }}
+                    icon={<AiFillMediumSquare />}
+                  />{" "}
+                </NavLink>
+              </Flex>
             </Flex>
 
             <Stack
               my={8}
               direction="row"
               spacing={7}
-              justifyContent={{base: "center", md: "left"}}
+              justifyContent={{ base: "center", md: "left" }}
             >
-<NavLink>  <Button
-                fontSize="17"
-                boxShadow="rgb(255 84 3) 0px 2px 8px 0px;"
-                bg="brand.100"
-                borderRadius={10}
-                py={7}
-                px={4}
-                fontWeight="light"
-                _hover={{ background: "brand.100" }}
-                leftIcon={<AiOutlineMail />}
-                className= {"confetti-button animate"}
-                
-                  
-                id="button"
-                onClick={handleClick}
-                
-              >
-                Email me
-              </Button>  </NavLink>
-<NavLink>  
-<Button
-                fontSize="17"
-                boxShadow="rgb(255 84 3) 0px 2px 8px 0px;"
-                colorScheme="brand.100"
-                py={7}
-                px={4}
-                border="1px"
-                borderRadius={10}
-                _hover={{ background: "brand.100" }}
-                borderColor="brand.100"
-                fontWeight="light"
-                leftIcon={<AiOutlineCloudDownload />}
-                className= {"confetti-button animate"}
-              >
-                Resume
-              </Button>
-</NavLink>
-             
-            
+              <NavLink>
+                {" "}
+                <Button
+                  fontSize="17"
+                  boxShadow="rgb(255 84 3) 0px 2px 8px 0px;"
+                  bg="brand.100"
+                  borderRadius={10}
+                  py={7}
+                  px={4}
+                  fontWeight="light"
+                  _hover={{ background: "brand.100" }}
+                  leftIcon={<AiOutlineMail />}
+                  className={"confetti-button animate"}
+                  id="button"
+                  onClick={handleClick}
+                >
+                  Email me
+                </Button>{" "}
+              </NavLink>
+              <NavLink>
+                <Button
+                  fontSize="17"
+                  boxShadow="rgb(255 84 3) 0px 2px 8px 0px;"
+                  colorScheme="brand.100"
+                  py={7}
+                  px={4}
+                  border="1px"
+                  borderRadius={10}
+                  _hover={{ background: "brand.100" }}
+                  borderColor="brand.100"
+                  fontWeight="light"
+                  leftIcon={<AiOutlineCloudDownload />}
+                  className={"confetti-button animate"}
+                >
+                  Resume
+                </Button>
+              </NavLink>
             </Stack>
           </Box>
-          <Box pb='3rem' > 
-              <Image ml={{ }} m={{base:'auto', md:'left' , xl:'auto'}}  width={{ base: "80%", md: "80%", xl: "90%" }} src={avater} />
-            </Box>
+          <Box pb="3rem">
+            <Image
+              ml={{}}
+              m={{ base: "auto", md: "left", xl: "auto" }}
+              width={{ base: "80%", md: "80%", xl: "90%" }}
+              src={avater}
+            />
+          </Box>
         </Flex>
         <Herosection />
         <Projectsection />
