@@ -13,6 +13,7 @@ import {
   Flex,
   IconButton,
   Image,
+  Link,
   Stack,
   Text,
 } from "@chakra-ui/react";
@@ -24,7 +25,7 @@ import Hiresection from "../components/Hiresection";
 import { NavLink } from "react-router-dom";
 import "../components/bubble.css";
 import { useState } from "react";
-
+import resuma from "../assets/resuma/Emmanuel sholaye.pdf";
 export default function Home() {
   const [isActive, setActive] = useState("false");
 
@@ -94,30 +95,33 @@ export default function Home() {
               <Box my="auto"> Follow me &nbsp; </Box>
 
               <Flex>
-                <NavLink>
-                  <IconButton
-                    variant="unstyled"
-                    fontSize={30}
-                    _hover={{ color: "#26a7de" }}
-                    icon={<AiOutlineTwitter />}
-                  />{" "}
-                </NavLink>
-                <NavLink>
+                <Link href="https://x.com/NoverPrime" isExternal>
+                  <a target="_blank" rel="noopener noreferrer">
+                    <IconButton
+                      variant="unstyled"
+                      fontSize={30}
+                      _hover={{ color: "#26a7de" }}
+                      icon={<AiOutlineTwitter />}
+                    />{" "}
+                  </a>
+                </Link>
+
+                <Link href="https://github.com/novertech411" isExternal>
                   <IconButton
                     variant="unstyled"
                     fontSize={30}
                     _hover={{ color: "#6c757d" }}
                     icon={<AiFillGithub />}
                   />{" "}
-                </NavLink>
-                <NavLink>
+                </Link>
+                <Link href="https://medium.com/@novertech4" isExternal>
                   <IconButton
                     variant="unstyled"
                     fontSize={30}
                     _hover={{ color: "#6c757d" }}
                     icon={<AiFillMediumSquare />}
                   />{" "}
-                </NavLink>
+                </Link>
               </Flex>
             </Flex>
 
@@ -146,7 +150,7 @@ export default function Home() {
                   Email me
                 </Button>{" "}
               </NavLink>
-              <NavLink>
+              <Link as="a" href={resuma} download="Emmanuel_Sholaye.pdf">
                 <Button
                   fontSize="17"
                   boxShadow="rgb(255 84 3) 0px 2px 8px 0px;"
@@ -163,7 +167,7 @@ export default function Home() {
                 >
                   Resume
                 </Button>
-              </NavLink>
+              </Link>
             </Stack>
           </Box>
           <Box pb="3rem">
