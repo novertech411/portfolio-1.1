@@ -1,5 +1,4 @@
-import { Box, Button, Flex, Icon, Text } from "@chakra-ui/react";
-import { NavLink, Outlet } from "react-router-dom";
+import { Box, Flex, Icon, Text } from "@chakra-ui/react";
 import Navbar from "../components/Navbar";
 import { ArrowForwardIcon } from "@chakra-ui/icons";
 import "../layouts/RootLayout.css";
@@ -7,7 +6,7 @@ import Footersection from "../components/Footersection";
 import { FaArrowCircleUp } from "react-icons/fa";
 import { useState } from "react";
 
-export default function RootLayout() {
+export default function RootLayout({ children }) {
   const [visible, setVisible] = useState(true);
 
   const toggleVisible = () => {
@@ -34,14 +33,15 @@ export default function RootLayout() {
         fontSize="1xl"
         justifyContent="center"
         p="0.6rem"
-        bgGradient="linear(to-r, #4158d0, #c850c0 , #ffcc70)"
+        bg="gray.800"
+        color="gray.300"
       >
         <Text>Open to opportunities </Text>
-        <NavLink to="/contact" as="u">
+        <a href="#contact" style={{ display: "flex", alignItems: "center" }}>
           {" "}
           &nbsp;<Text as="u">Contact me </Text> &nbsp;
-        </NavLink>
-        <Icon as={ArrowForwardIcon} />
+          <Icon as={ArrowForwardIcon} />
+        </a>
       </Flex>
 
       {visible && (
@@ -50,15 +50,16 @@ export default function RootLayout() {
           zIndex={2}
           bottom="20"
           right="10"
-          color="#6fc2c5"
+          color="white"
           fontSize="3rem"
           as={FaArrowCircleUp}
           onClick={scrollToTop}
+          cursor="pointer"
         />
       )}
 
       <Navbar />
-      <Outlet />
+      {children}
 
       <Footersection />
     </Box>

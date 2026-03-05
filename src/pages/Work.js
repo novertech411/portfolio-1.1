@@ -1,83 +1,86 @@
-import { Box, Button, Center, Flex, SimpleGrid, Spacer, Text } from '@chakra-ui/react'
+import { Box, Button, Flex, Spacer, Text } from '@chakra-ui/react'
 import React from 'react'
-import { Icon } from '@chakra-ui/react'
 import { ArrowForwardIcon } from '@chakra-ui/icons'
 import Cardbar from '../components/Cardbar'
 
 export default function Work() {
   return (
-    <Box  width={{ base: "95%", md: "80%", xl: "70%" }}  mx="auto" >
-      
-      
-      <Flex justifyContent="center"  mt="7" >
-        <Text as="b"  color="white" fontSize={28}>
-           Projects
+    <Box id="work" pt="5rem" width={{ base: "95%", md: "80%", xl: "70%" }} mx="auto" >
+
+
+      <Flex justifyContent="center" mt="7" >
+        <Text as="b" color="white" fontSize={28}>
+          Projects
         </Text>{" "}
         <Spacer />{" "}
         <Button
           fontSize="18"
-          boxShadow="rgb(255 84 3) 0px 2px 8px 0px;"
-          bg="brand.100"
+          boxShadow="0px 2px 8px 0px rgba(255,255,255,0.2)"
+          bg="white"
+          color="black"
+          _hover={{ bg: "gray.300" }}
           borderRadius={10}
           py={2}
           px={4}
           fontWeight="light"
-         
-          rightIcon={<ArrowForwardIcon/>}
+
+          rightIcon={<ArrowForwardIcon />}
         >
-          See All Project 
+          See All Project
         </Button>
       </Flex>
       <Flex
-       mt="5rem"
-       mb="5rem"
-       gap={10}
-       flexWrap="wrap"
-       justifyContent={{base:"center", md:"left"}}
+        mt="5rem"
+        mb="5rem"
+        gap={10}
+        flexWrap="wrap"
+        justifyContent={{ base: "center", md: "left" }}
       >
-<Cardbar/>
-<Cardbar/>
-<Cardbar/>
+        <Cardbar />
+        <Cardbar />
+        <Cardbar />
 
       </Flex>
 
 
-      <Flex justifyContent="center"  mt="7" >
-        <Text as="b"  color="white" fontSize={28}>
-           Articles
+      <Flex justifyContent="center" mt="7" >
+        <Text as="b" color="white" fontSize={28}>
+          Articles
         </Text>{" "}
         <Spacer />{" "}
         <Button
           fontSize="18"
-          boxShadow="rgb(255 84 3) 0px 2px 8px 0px;"
-          bg="brand.100"
+          boxShadow="0px 2px 8px 0px rgba(255,255,255,0.2)"
+          bg="white"
+          color="black"
+          _hover={{ bg: "gray.300" }}
           borderRadius={10}
           py={2}
           px={4}
           fontWeight="light"
-         
-          rightIcon={<ArrowForwardIcon/>}
+
+          rightIcon={<ArrowForwardIcon />}
         >
           See All articles
         </Button>
       </Flex>
 
       <Flex
-      mt="5rem"
-   mb="5rem"
-   gap={10}
-   flexWrap="wrap"
-   justifyContent={{base:"center", md:"left"}}
-   
-    
-       
+        mt="5rem"
+        mb="5rem"
+        gap={10}
+        flexWrap="wrap"
+        justifyContent={{ base: "center", md: "left" }}
+
+
+
       >
-<Cardbar />
-<Cardbar />
+        <Cardbar />
+        <Cardbar />
 
 
       </Flex>
 
-      </Box>
+    </Box>
   )
 }

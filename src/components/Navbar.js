@@ -10,7 +10,6 @@ import {
   Image,
 } from "@chakra-ui/react";
 import { useState } from "react";
-import { NavLink } from "react-router-dom";
 import { Input } from "@chakra-ui/react"
 import Hamburger from "./hamburger/Hamburger";
 import "./hamburger/hamburger.css";
@@ -18,10 +17,8 @@ import { motion, Variants } from "framer-motion";
 import logo from "../assets/images/brand.png"
 
 export default function Navbar() {
-  const activeLink = { color: "rgb(255, 84, 3)" };
-  const normalLink = "";
-  const [isOpen, setIsOpen] = useState("false");
-  const [checked, setChecked] = useState("true");
+  const [isOpen, setIsOpen] = useState(false);
+  const [checked, setChecked] = useState(true);
   const handleCheck = () => {
     setChecked(!checked);
   };
@@ -62,74 +59,50 @@ export default function Navbar() {
   };
 
   return (
-    <Box>
-      <Flex p="30px" px="5%">
+    <Box bg="black" color="white" position="sticky" top="0" zIndex="1000">
+      <Flex p="20px" px="5%">
         <Circle
-          bg="#F44133"
+          bg="white"
           fontSize="20px"
           justifyContent="center"
           alignItems="center"
           boxSize="50px"
           p={1}
-        
         >
-          <Image src={logo} />
+          <Image src={logo} style={{ filter: 'grayscale(100%)' }} />
         </Circle>
         <Spacer />
 
         <Show above="md">
           <HStack spacing={6} mr="40px">
-            <NavLink
-              to="/"
-              style={({ isActive }) => ({
-                color: isActive ? "#ff5403" : "#ffff",
-              })}
-            >
-              <Text _hover={{ color: "brand.100" }} as="b">
+            <a href="#home">
+              <Text _hover={{ color: "gray.300" }} as="b" color="white">
                 Home
               </Text>
-            </NavLink>
-            <NavLink
-              to="/work"
-              style={({ isActive }) => ({
-                color: isActive ? "#ff5403" : "#ffff",
-              })}
-            >
-              <Text _hover={{ color: "brand.100" }} as="b" color="WhiteAlpha">
+            </a>
+            <a href="#work">
+              <Text _hover={{ color: "gray.300" }} as="b" color="white">
                 Work
               </Text>
-            </NavLink>
-
-            <NavLink
-              to="/about"
-              style={({ isActive }) => ({
-                color: isActive ? "#ff5403" : "#ffff",
-              })}
-            >
-              {" "}
-              <Text _hover={{ color: "brand.100" }} as="b" color="WhiteAlpha">
+            </a>
+            <a href="#about">
+              <Text _hover={{ color: "gray.300" }} as="b" color="white">
                 About me
-              </Text>{" "}
-            </NavLink>
-            <NavLink
-              to="/contact"
-              style={({ isActive }) => ({
-                color: isActive ? "#ff5403" : "#ffff",
-              })}
-            >
-              {" "}
-              <Text _hover={{ color: "brand.100" }} as="b" color="WhiteAlpha">
+              </Text>
+            </a>
+            <a href="#contact">
+              <Text _hover={{ color: "gray.300" }} as="b" color="white">
                 Contact
-              </Text>{" "}
-            </NavLink>
+              </Text>
+            </a>
           </HStack>
         </Show>
         <Show below="md">
           <Box pos="fixed" right="7" zIndex={3}>
             <Circle
               p="2"
-              bg="brand.100"
-              boxShadow="0 7px 29px 0  rgb(255 84 3 / 30%)"
+              bg="white"
+              boxShadow="0 7px 29px 0 rgba(0, 0, 0, 0.3)"
             >
               <div id="menu_button">
                 <Input
@@ -153,7 +126,7 @@ export default function Navbar() {
       <Show below="md">
         <Flex
           pos="fixed"
-          bgGradient="linear( to-bl  , #000000 5% , #782701 )"
+          bg="black"
           w="100%"
           h="100%"
           zIndex={2}
@@ -164,7 +137,6 @@ export default function Navbar() {
           initial={false}
           animate={isOpen ? "open" : "closed"}
           variants={containerVariants}
-        
         >
           <Stack
             textAlign="center"
@@ -176,58 +148,46 @@ export default function Navbar() {
             variants={childVariants}
             animate={isOpen ? "open" : "closed"}
           >
-            <NavLink
-              to="/"
+            <a
+              href="#home"
               onClick={() => {
                 handleSet();
                 handleCheck();
               }}
-              style={({ isActive }) => ({
-                color: isActive ? "#ff5403" : "#ffff",
-              })}
+              style={{ color: "white" }}
             >
-              {" "}
               <Text as="b"> Home </Text>
-            </NavLink>
-            <NavLink
-              to="/work"
+            </a>
+            <a
+              href="#work"
               onClick={() => {
                 handleSet();
                 handleCheck();
               }}
-              style={({ isActive }) => ({
-                color: isActive ? "#ff5403" : "#ffff",
-              })}
+              style={{ color: "white" }}
             >
-              {" "}
               <Text as="b"> Work </Text>
-            </NavLink>
-            <NavLink
-              to="/about"
+            </a>
+            <a
+              href="#about"
               onClick={() => {
                 handleSet();
                 handleCheck();
               }}
-              style={({ isActive }) => ({
-                color: isActive ? "#ff5403" : "#ffff",
-              })}
+              style={{ color: "white" }}
             >
-              {" "}
               <Text as="b"> About </Text>
-            </NavLink>
-            <NavLink
-              to="/contact"
+            </a>
+            <a
+              href="#contact"
               onClick={() => {
                 handleSet();
                 handleCheck();
               }}
-              style={({ isActive }) => ({
-                color: isActive ? "#ff5403" : "#ffff",
-              })}
+              style={{ color: "white" }}
             >
-              {" "}
               <Text as="b"> Contact </Text>
-            </NavLink>
+            </a>
           </Stack>
         </Flex>
       </Show>

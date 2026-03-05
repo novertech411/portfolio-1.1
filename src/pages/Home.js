@@ -22,7 +22,6 @@ import { Typewriter } from "react-simple-typewriter";
 import Herosection from "../components/Herosection";
 import Projectsection from "../components/Projectsection";
 import Hiresection from "../components/Hiresection";
-import { NavLink } from "react-router-dom";
 import "../components/bubble.css";
 import { useState } from "react";
 import resuma from "../assets/resuma/Emmanuel sholaye.pdf";
@@ -34,9 +33,9 @@ export default function Home() {
   }
 
   return (
-    <Box>
+    <Box id="home" py="5rem">
       <Box
-        p={{ basc: "0%", xl: "5%" }}
+        p={{ base: "0%", xl: "5%" }}
         width={{ base: "90%", md: "75%", xl: "75%" }}
         mx="auto"
       >
@@ -53,42 +52,41 @@ export default function Home() {
               Hay!
             </Text>
             <Text fontSize="5xl">
-              I'm <span style={{ color: "#ff5403" }}>Sholaye</span>
+              I'm <span style={{ color: "white" }}>Sholaye</span>
             </Text>
             <Box
               as="b"
               fontSize="3xl"
-              color="brand.300"
-              justifyContent="center
-          "
+              color="gray.400"
+              justifyContent="center"
             >
               <Typewriter
                 words={["web developer", "technical writer", "oss contributor"]}
-                loop={"false"}
+                loop={false}
                 cursor
                 cursorStyle="<"
                 typeSpeed={70}
-                cursorColor="#ff5403"
+                cursorColor="white"
                 deleteSpeed={190}
                 delaySpeed={2000}
               />
             </Box>
-            <Box fontSize="1xl" color="brand.200">
+            <Box fontSize="1xl" color="gray.400">
               I have a passion for technology.
             </Box>
-            <Box my="3" color="brand.200" flexDirection="row">
-              <NavLink to="/about">
+            <Box my="3" color="gray.400" flexDirection="row">
+              <a href="#about">
                 <Button
                   fontSize="1xl"
                   variant="unstyled"
                   p="0"
-                  _hover={{ color: "#b53b02" }}
-                  color="brand.100"
+                  _hover={{ color: "gray.300" }}
+                  color="white"
                   rightIcon={<AiOutlineLink />}
                 >
                   know More
                 </Button>
-              </NavLink>
+              </a>
               &nbsp;about me
             </Box>
             <Flex fontSize="18" justifyContent={{ base: "center", md: "left" }}>
@@ -131,36 +129,37 @@ export default function Home() {
               spacing={7}
               justifyContent={{ base: "center", md: "left" }}
             >
-              <NavLink>
-                {" "}
+              <a href="#contact">
                 <Button
                   fontSize="17"
-                  boxShadow="rgb(255 84 3) 0px 2px 8px 0px;"
-                  bg="brand.100"
+                  boxShadow="0px 2px 8px 0px rgba(255,255,255,0.2)"
+                  bg="white"
+                  color="black"
                   borderRadius={10}
                   py={7}
                   px={4}
                   fontWeight="light"
-                  _hover={{ background: "brand.100" }}
+                  _hover={{ background: "gray.300" }}
                   leftIcon={<AiOutlineMail />}
                   className={"confetti-button animate"}
                   id="button"
                   onClick={handleClick}
                 >
                   Email me
-                </Button>{" "}
-              </NavLink>
-              <Link as="a" href={resuma} download="Emmanuel_Sholaye.pdf">
+                </Button>
+              </a>
+              <Link as="a" href={resuma} download="Emmanuel_Sholaye.pdf" style={{ textDecoration: 'none' }}>
                 <Button
                   fontSize="17"
-                  boxShadow="rgb(255 84 3) 0px 2px 8px 0px;"
-                  colorScheme="brand.100"
+                  boxShadow="0px 2px 8px 0px rgba(255,255,255,0.2)"
+                  colorScheme="gray"
+                  color="white"
                   py={7}
                   px={4}
                   border="1px"
                   borderRadius={10}
-                  _hover={{ background: "brand.100" }}
-                  borderColor="brand.100"
+                  _hover={{ background: "gray.700" }}
+                  borderColor="white"
                   fontWeight="light"
                   leftIcon={<AiOutlineCloudDownload />}
                   className={"confetti-button animate"}
@@ -182,8 +181,8 @@ export default function Home() {
         {/* <Herosection /> */}
         <Projectsection />
         <Hiresection />
-      </Box>
-    </Box>
+      </Box >
+    </Box >
   );
 }
 const heroLink = {

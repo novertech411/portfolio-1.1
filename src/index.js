@@ -3,21 +3,20 @@ import ReactDOM from "react-dom/client";
 import App from "./App";
 
 import { ChakraProvider, extendTheme } from "@chakra-ui/react";
-import { BrowserRouter } from "react-router-dom";
 
-// etend the theme
+// extend the theme to strict minimalist black & white
 const colors = {
   brand: {
-    100: "#ff5403",
-    200: "#8a94a6",
-    300: "#84a1ff",
-    400: "#90c0e8",
-    500: "#6fc2c5;"
+    100: "#000000",
+    200: "#333333",
+    300: "#666666",
+    400: "#999999",
+    500: "#cccccc"
   },
   dark: {
-    100: " #1c1c1c",
-    200:  "#2f2f2f" ,
-    300: "#212529"
+    100: "#000000",
+    200: "#111111",
+    300: "#222222"
   },
 };
 
@@ -26,9 +25,7 @@ const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
     <ChakraProvider theme={theme}>
-      <BrowserRouter>
-        <App />
-      </BrowserRouter>
+      <App />
     </ChakraProvider>
   </React.StrictMode>
 );
