@@ -1,4 +1,4 @@
-import { Box, Button, Center, Divider, Flex, IconButton, Image, Stack, Text } from "@chakra-ui/react";
+import { Box, Button, Divider, Flex, IconButton, Image, Stack, Text } from "@chakra-ui/react";
 import avater from "../assets/images/animate.png"
 import react from "../assets/images/react.svg"
 import node from "../assets/images/nodejs.svg"

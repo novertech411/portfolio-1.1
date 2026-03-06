@@ -7,7 +7,6 @@ import {
   HStack,
   Image,
   SimpleGrid,
-  Stack,
   Text,
 } from "@chakra-ui/react";
 import React from "react";

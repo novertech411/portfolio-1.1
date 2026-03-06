@@ -19,7 +19,6 @@ import {
 } from "@chakra-ui/react";
 import avater from "../assets/images/animate.png";
 import { Typewriter } from "react-simple-typewriter";
-import Herosection from "../components/Herosection";
 import Projectsection from "../components/Projectsection";
 import Hiresection from "../components/Hiresection";
 import "../components/bubble.css";
@@ -94,14 +93,12 @@ export default function Home() {
 
               <Flex>
                 <Link href="https://x.com/NoverPrime" isExternal>
-                  <a target="_blank" rel="noopener noreferrer">
-                    <IconButton
-                      variant="unstyled"
-                      fontSize={30}
-                      _hover={{ color: "#26a7de" }}
-                      icon={<AiOutlineTwitter />}
-                    />{" "}
-                  </a>
+                  <IconButton
+                    variant="unstyled"
+                    fontSize={30}
+                    _hover={{ color: "#26a7de" }}
+                    icon={<AiOutlineTwitter />}
+                  />{" "}
                 </Link>
 
                 <Link href="https://github.com/novertech411" isExternal>
@@ -185,11 +182,7 @@ export default function Home() {
     </Box >
   );
 }
-const heroLink = {
-  color: "#ff5403",
-  display: "flex",
-  cursor: "pointer",
-};
+
 // //  <a style={{ hover: { color: "#0d6efd" } }}>
 // <AiOutlineTwitter />
 // </a>

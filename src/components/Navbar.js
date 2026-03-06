@@ -11,9 +11,8 @@ import {
 } from "@chakra-ui/react";
 import { useState } from "react";
 import { Input } from "@chakra-ui/react"
-import Hamburger from "./hamburger/Hamburger";
 import "./hamburger/hamburger.css";
-import { motion, Variants } from "framer-motion";
+import { motion } from "framer-motion";
 import logo from "../assets/images/brand.png"
 
 export default function Navbar() {

@@ -1,4 +1,4 @@
-import { Box, Button, Flex, SimpleGrid, Spacer, Text } from "@chakra-ui/react";
+import { Box, Button, Flex, Spacer, Text } from "@chakra-ui/react";
 
 import Cardbar from "./Cardbar";
 export default function Projectsection() {

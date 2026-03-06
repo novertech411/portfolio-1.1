@@ -25,7 +25,7 @@ export default function Footersection() {
 
             </VStack>
             <HStack mt="0.6rem" mb="1.5rem" margin={{ md: 'auto' }}>
-              <a href="#">
+              <a href="https://x.com/NoverPrime" target="_blank" rel="noopener noreferrer">
                 <IconButton fontSize="4xl" border="none" color="white" _hover={{ color: "gray.300" }} variant={"outline"} icon={<AiOutlineTwitter />} />{" "}
               </a>
               <a href="https://github.com/novertech411" target="_blank" rel="noopener noreferrer">
@@ -34,7 +34,7 @@ export default function Footersection() {
               <a href="https://medium.com/@novertech4" target="_blank" rel="noopener noreferrer">
                 <IconButton fontSize="4xl" border="none" color="white" _hover={{ color: "gray.300" }} variant={"outline"} icon={<AiFillMediumSquare />} />
               </a>
-              <a href="#">
+              <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer">
                 <IconButton fontSize="4xl" border="none" color="white" _hover={{ color: "gray.300" }} variant={"outline"} icon={<AiFillLinkedin />} />
               </a>
             </HStack>
@@ -42,15 +42,9 @@ export default function Footersection() {
           </Flex>
           <Divider color="gray.600" />
           <Stack mt="1.5rem" color="white" justifyContent="left"   >
-            <a href="#">
-              <Text _hover={{ color: "gray.300" }}>Report</Text>
-            </a>
-            <a href="#">
-              <Text _hover={{ color: "gray.300" }}>Feedback</Text>
-            </a>
-            <a href="#">
-              <Text _hover={{ color: "gray.300" }}>Privacy Policy</Text>
-            </a>
+            <Text cursor="pointer" _hover={{ color: "gray.300" }}>Report</Text>
+            <Text cursor="pointer" _hover={{ color: "gray.300" }}>Feedback</Text>
+            <Text cursor="pointer" _hover={{ color: "gray.300" }}>Privacy Policy</Text>
           </Stack>
         </Box>
       </Box>
