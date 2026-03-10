@@ -1,4 +1,5 @@
 import { Box, Container, Flex, Heading, Text, VStack } from "@chakra-ui/react";
+import { motion } from "framer-motion";
 
 const experiences = [
     {
@@ -6,10 +7,7 @@ const experiences = [
         role: "Lead Frontend Developer (Contract)",
         date: "03/2025",
         description: [
-            "Led the frontend development of a telemedicine web app, collaborating with backend and frontend engineers to enable patient-doctor consultations.",
-            "Implemented the design for a management dashboard, supporting admin, doctor, and patient interactions for booking consultations, viewing schedules, managing subscriptions, and processing payments.",
-            "Consumed APIs to facilitate patient booking, consultation views, and subscription tracking.",
-            "Developed the admin dashboard to monitor patient and doctor activities, manage payments, and oversee consultation bookings."
+            "Developed the frontend for a telemedicine web app, featuring patient booking, dashboards, and payment management."
         ]
     },
     {
@@ -17,10 +15,7 @@ const experiences = [
         role: "Frontend Engineer",
         date: "09/2024 – 02/2025",
         description: [
-            "Manage and optimize the frontend of a large-scale e-commerce marketplace (pashione.co) using Next.js, TypeScript, and Supabase, adding a product variant display feature and fixing navigation issues.",
-            "Built and maintain the Careers page on the corporate site (corporate.pashione.co) with real-time job updates.",
-            "Developed the Medlitics launch site, adding About Me and FAQ sections, a chatbot, and SEO enhancements.",
-            "Maintain daily responsiveness to client technical needs and improve code performance."
+            "Optimized frontend of pashione.co marketplace using Next.js and Supabase, and developed real-time features."
         ]
     },
     {
@@ -28,9 +23,7 @@ const experiences = [
         role: "Team Lead - Frontend Developer",
         date: "08/2024 – 03/2025",
         description: [
-            "Led the rewrite of a dashboard using React, Tailwind CSS, and Firebase to monitor mobile app interactions (signups, agents, transactions), adding finance tracking, admin privileges, and authentication.",
-            "Converted the optimized web dashboard into Windows, Linux, and Mac desktop apps using Electron for marketing team use; handle ongoing updates and issue resolution.",
-            "Revamped Herrand.com with a clean, accessible UI aligned with the company brand."
+            "Led dashboard rewrite using React and Firebase, later converted to Electron desktop apps across platforms."
         ]
     },
     {
@@ -38,8 +31,7 @@ const experiences = [
         role: "Frontend Developer",
         date: "04/2024 – 07/2024",
         description: [
-            "Developed the frontend of a database platform to monitor agricultural support beneficiaries.",
-            "Built the company website, enabling signup and registration for farmers and extension workers."
+            "Built agricultural database platform and company registration site for farmers."
         ]
     },
     {
@@ -47,9 +39,7 @@ const experiences = [
         role: "Frontend Web Developer",
         date: "01/2024 – 05/2024",
         description: [
-            "Collaborated on building the company landing page with TypeScript and Next.js for a fintech platform.",
-            "Contributed to a monitoring dashboard tracking currency exchange data (customer evaluations, volumes, valuations).",
-            "Worked with team to integrate frontend with backend systems under the team lead's guidance."
+            "Built fintech landing page and currency exchange monitoring dashboard with Next.js."
         ]
     },
     {
@@ -57,9 +47,7 @@ const experiences = [
         role: "Frontend Developer",
         date: "02/2023 – 09/2023",
         description: [
-            "Developed the frontend of the Yazapay Payment Portal, enhancing transaction processing efficiency.",
-            "Implemented cutting-edge web technologies, ensuring a responsive and user-friendly interface, boosting user satisfaction.",
-            "Collaborated with cross-functional teams to define, design, and implement new features, reducing development time."
+            "Developed responsive Yazapay Payment Portal frontend to boost processing efficiency and user satisfaction."
         ]
     },
     {
@@ -67,17 +55,14 @@ const experiences = [
         role: "Project Manager & Lead Frontend Developer",
         date: "05/2022 – 09/2024",
         description: [
-            "Led the frontend development and project management for Pandora's Box, an edtech solution mimicking Coursera, enabling students to access tutor content, track progress, and complete assessments.",
-            "Collaborated with cloud engineers, backend developers, and UI/UX designers to deliver a seamless, scalable platform.",
-            "Designed and implemented a responsive student dashboard with React and Next.js, enhancing user engagement and content accessibility.",
-            "Integrated APIs to sync progress data and assessments, improving real-time tracking for students and tutors."
+            "Led frontend and project management for Pandora's Box edtech platform, creating an accessible student dashboard."
         ]
     }
 ];
 
 export default function ExperienceTree() {
     return (
-        <Box py={20} bg="#050505" color="white" id="experience">
+        <Box py={20} bg="#1a1a1a" color="white" id="experience">
             <Container maxW="container.xl">
                 <Heading
                     fontSize={{ base: "3xl", md: "5xl" }}
@@ -114,6 +99,11 @@ export default function ExperienceTree() {
                     <VStack spacing={12} align="stretch">
                         {experiences.map((exp, index) => (
                             <Flex
+                                as={motion.div}
+                                initial={{ opacity: 0, y: 50 }}
+                                whileInView={{ opacity: 1, y: 0 }}
+                                viewport={{ once: true, margin: "-50px" }}
+                                transition={{ duration: 0.5 }}
                                 key={index}
                                 direction={{ base: "column", md: index % 2 === 0 ? "row" : "row-reverse" }}
                                 position="relative"
@@ -127,8 +117,9 @@ export default function ExperienceTree() {
                                     transform={{ "base": "translateX(-50%)", "md": "translate(-50%, 0)" }}
                                     w="16px"
                                     h="16px"
-                                    bg="#050505"
-                                    border="4px solid #ff5403"
+                                    bg="#ff5403"
+                                    border="none"
+                                    boxShadow="0 0 10px rgba(255,84,3,0.8), inset 2px 2px 5px rgba(255,255,255,0.3)"
                                     borderRadius="full"
                                     zIndex={1}
                                 />
@@ -138,13 +129,14 @@ export default function ExperienceTree() {
                                     w={{ base: "calc(100% - 40px)", md: "45%" }}
                                     ml={{ base: "40px", md: 0 }}
                                     p={8}
-                                    bg="rgba(255,255,255,0.02)"
-                                    border="1px solid rgba(255,255,255,0.05)"
+                                    bg="#1a1a1a"
+                                    border="none"
+                                    boxShadow="8px 8px 16px rgba(0,0,0,0.8), -8px -8px 16px rgba(255,255,255,0.05)"
                                     borderRadius="2xl"
                                     position="relative"
                                     _hover={{
-                                        borderColor: "rgba(255,84,3,0.5)",
                                         transform: "translateY(-5px)",
+                                        boxShadow: "10px 10px 20px rgba(0,0,0,0.9), -10px -10px 20px rgba(255,255,255,0.06)"
                                     }}
                                     transition="all 0.3s ease"
                                 >

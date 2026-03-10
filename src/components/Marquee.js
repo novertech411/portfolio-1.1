@@ -23,7 +23,7 @@ const MarqueeItem = ({ text }) => (
         textTransform="uppercase"
         mx="1rem"
         style={{
-            WebkitTextStroke: "1px rgba(255,255,255,0.2)",
+            WebkitTextStroke: "1px #ff5403",
         }}
     >
         {text}

@@ -2,8 +2,10 @@ import {
   AiOutlineTwitter,
   AiFillGithub,
   AiOutlineCloudDownload,
-  AiFillLinkedin
+  AiFillLinkedin,
+  AiOutlineWhatsApp
 } from "react-icons/ai";
+import { motion } from "framer-motion";
 
 import {
   Box,
@@ -22,13 +24,14 @@ import Hiresection from "../components/Hiresection";
 import Marquee from "../components/Marquee";
 import ExperienceTree from "../components/ExperienceTree";
 import SkillsAndEducation from "../components/SkillsAndEducation";
+import Contact from "./Contact";
 import "../components/bubble.css";
 import { useState } from "react";
 import resuma from "../assets/resuma/Emmanuel sholaye.pdf";
 
 export default function Home() {
   return (
-    <Box id="home" pt="10rem" pb="5rem" bg="#050505" color="white" minH="100vh">
+    <Box id="home" pt="10rem" pb="5rem" bg="#1a1a1a" color="white" minH="100vh">
       <Container maxW="container.xl">
         <Flex
           flexDirection={{ base: "column", lg: "row" }}
@@ -60,40 +63,11 @@ export default function Home() {
               />
             </Box>
 
-            <Text fontSize="lg" color="gray.400" mb={8} maxW="container.md" mx={{ base: "auto", lg: "0" }} lineHeight="1.8">
-              Frontend Developer with experience in designing, building, and maintaining web applications.
-              Proficient in React, Next.js, CSS, JavaScript, TypeScript, and various front-end development tools.
-              Proven track record in collaborating with cross-functional teams to develop and implement innovative features.
-              Passionate about leveraging expertise to support cutting-edge web solutions, ensure top software performance,
-              and nurture vibrant developer communities.
+            <Text as={motion.p} initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5, delay: 0.4 }} fontSize="lg" color="gray.400" mb={8} maxW="container.md" mx={{ base: "auto", lg: "0" }} lineHeight="1.8">
+              Creative Frontend Developer focused on building dynamic, high-performance web applications with modern minimalist designs.
             </Text>
 
-            <Flex
-              gap={8}
-              mb={8}
-              flexWrap="wrap"
-              justifyContent={{ base: "center", lg: "flex-start" }}
-              borderTop="1px solid rgba(255,255,255,0.1)"
-              borderBottom="1px solid rgba(255,255,255,0.1)"
-              py={6}
-            >
-              <Box>
-                <Text color="gray.500" fontSize="sm" mb={1}>Email</Text>
-                <Link href="mailto:sholayeeyinmosan@gmail.com" fontWeight="medium" _hover={{ color: "#ff5403" }}>
-                  sholayeeyinmosan@gmail.com
-                </Link>
-              </Box>
-              <Box>
-                <Text color="gray.500" fontSize="sm" mb={1}>Phone</Text>
-                <Text fontWeight="medium">+234 906 756 6893</Text>
-              </Box>
-              <Box>
-                <Text color="gray.500" fontSize="sm" mb={1}>Website</Text>
-                <Link href="https://sholadev.vercel.app/" isExternal fontWeight="medium" _hover={{ color: "#ff5403" }}>
-                  sholadev.vercel.app
-                </Link>
-              </Box>
-            </Flex>
+
 
             <Flex gap={4} justifyContent={{ base: "center", lg: "flex-start" }} alignItems="center">
               <Link href="https://www.linkedin.com/in/eyinmosan-sholaye-080732172" isExternal>
@@ -126,16 +100,30 @@ export default function Home() {
                   icon={<AiOutlineTwitter />}
                 />
               </Link>
+              <Link href="https://wa.me/2349067566893" isExternal>
+                <IconButton
+                  variant="unstyled"
+                  fontSize="2xl"
+                  color="gray.400"
+                  _hover={{ color: "#25D366", transform: "translateY(-2px)" }}
+                  transition="all 0.2s"
+                  icon={<AiOutlineWhatsApp />}
+                />
+              </Link>
 
               <Link as="a" href={resuma} download="Emmanuel_Sholaye.pdf" style={{ textDecoration: 'none', marginLeft: 'auto' }}>
                 <Button
-                  bg="transparent"
+                  as={motion.button}
+                  whileHover={{ scale: 1.02 }}
+                  whileTap={{ boxShadow: "inset 5px 5px 10px rgba(0,0,0,0.8), inset -5px -5px 10px rgba(255,255,255,0.05)", scale: 0.98 }}
+                  bg="#ff5403"
                   color="white"
-                  border="1px solid rgba(255,255,255,0.2)"
+                  border="none"
+                  boxShadow="8px 8px 16px rgba(0,0,0,0.8), -8px -8px 16px rgba(255,255,255,0.05)"
                   px={8}
                   py={6}
                   borderRadius="full"
-                  _hover={{ bg: "white", color: "black" }}
+                  _focus={{ outline: "none" }}
                   rightIcon={<AiOutlineCloudDownload />}
                   transition="all 0.3s ease"
                 >
@@ -147,17 +135,17 @@ export default function Home() {
 
           <Box flex="1" display="flex" justifyContent={{ base: "center", lg: "flex-end" }}>
             <Box
+              as={motion.div}
+              initial={{ opacity: 0, scale: 0.8 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 0.8, delay: 0.2 }}
               position="relative"
-              _before={{
-                content: '""',
-                position: "absolute",
-                top: "-5%",
-                left: "-5%",
-                width: "110%",
-                height: "110%",
-                background: "radial-gradient(circle, rgba(255,84,3,0.15) 0%, rgba(0,0,0,0) 70%)",
-                zIndex: 0
-              }}
+              display="inline-block"
+              borderRadius="full"
+              border="none"
+              boxShadow="12px 12px 24px rgba(0, 0, 0, 0.8), -12px -12px 24px rgba(255, 255, 255, 0.05)"
+              p={4}
+              bg="#1a1a1a"
             >
               <Image
                 src={avater}
@@ -167,7 +155,6 @@ export default function Home() {
                 mx="auto"
                 position="relative"
                 zIndex={1}
-                filter="drop-shadow(0px 20px 30px rgba(0,0,0,0.5))"
               />
             </Box>
           </Box>
@@ -180,6 +167,7 @@ export default function Home() {
 
       <Projectsection />
       <Hiresection />
+      <Contact />
     </Box>
   );
 }

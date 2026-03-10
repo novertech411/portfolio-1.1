@@ -1,4 +1,5 @@
 import { Box, Container, Flex, Heading, Text, VStack, SimpleGrid, Badge, Icon } from "@chakra-ui/react";
+import { motion } from "framer-motion";
 import { AiOutlineCode, AiOutlineTool, AiOutlineProject } from "react-icons/ai";
 
 const education = [
@@ -34,7 +35,7 @@ const skillCategories = [
 
 export default function SkillsAndEducation() {
     return (
-        <Box py={20} bg="#050505" color="white" id="skills">
+        <Box py={20} bg="#1a1a1a" color="white" id="skills">
             <Container maxW="container.xl">
                 <Flex direction={{ base: "column", lg: "row" }} gap={16}>
 
@@ -61,12 +62,18 @@ export default function SkillsAndEducation() {
                         <VStack align="stretch" spacing={6}>
                             {education.map((edu, index) => (
                                 <Box
+                                    as={motion.div}
+                                    initial={{ opacity: 0, x: -30 }}
+                                    whileInView={{ opacity: 1, x: 0 }}
+                                    viewport={{ once: true }}
+                                    transition={{ duration: 0.5 }}
                                     key={index}
                                     p={8}
-                                    bg="rgba(255,255,255,0.02)"
-                                    border="1px solid rgba(255,255,255,0.05)"
+                                    bg="#1a1a1a"
+                                    border="none"
+                                    boxShadow="8px 8px 16px rgba(0,0,0,0.8), -8px -8px 16px rgba(255,255,255,0.05)"
                                     borderRadius="2xl"
-                                    _hover={{ borderColor: "rgba(255,84,3,0.3)" }}
+                                    _hover={{ boxShadow: "10px 10px 20px rgba(0,0,0,0.9), -10px -10px 20px rgba(255,255,255,0.06)" }}
                                     transition="all 0.3s ease"
                                 >
                                     <Text color="#ff5403" fontWeight="600" fontSize="sm" mb={2}>
@@ -106,12 +113,17 @@ export default function SkillsAndEducation() {
                         <SimpleGrid columns={{ base: 1, md: 2 }} spacing={6}>
                             {skillCategories.map((category, index) => (
                                 <Box
+                                    as={motion.div}
+                                    initial={{ opacity: 0, scale: 0.9 }}
+                                    whileInView={{ opacity: 1, scale: 1 }}
+                                    viewport={{ once: true }}
+                                    transition={{ duration: 0.5, delay: index * 0.1 }}
                                     key={index}
                                     p={6}
-                                    bg="rgba(255,255,255,0.02)"
-                                    border="1px solid rgba(255,255,255,0.05)"
+                                    bg="#1a1a1a"
+                                    border="none"
+                                    boxShadow="8px 8px 16px rgba(0,0,0,0.8), -8px -8px 16px rgba(255,255,255,0.05)"
                                     borderRadius="2xl"
-                                    _hover={{ borderColor: "rgba(255,84,3,0.3)", bg: "rgba(255,255,255,0.03)" }}
                                     transition="all 0.3s ease"
                                 >
                                     <Flex align="center" mb={4} gap={3}>
@@ -122,15 +134,16 @@ export default function SkillsAndEducation() {
                                         {category.skills.map((skill, i) => (
                                             <Badge
                                                 key={i}
-                                                px={3}
-                                                py={1}
-                                                bg="rgba(255,255,255,0.05)"
-                                                color="gray.300"
+                                                px={4}
+                                                py={2}
+                                                bg="#1a1a1a"
+                                                color="white"
                                                 borderRadius="full"
                                                 textTransform="none"
                                                 fontSize="sm"
                                                 fontWeight="normal"
-                                                border="1px solid rgba(255,255,255,0.1)"
+                                                border="none"
+                                                boxShadow="inset 4px 4px 8px rgba(0,0,0,0.8), inset -4px -4px 8px rgba(255,255,255,0.05)"
                                             >
                                                 {skill}
                                             </Badge>

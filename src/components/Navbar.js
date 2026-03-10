@@ -58,17 +58,31 @@ export default function Navbar() {
   };
 
   return (
-    <Box bg="black" color="white" position="sticky" top="0" zIndex="1000">
-      <Flex p="20px" px="5%">
+    <Box position="sticky" top="4" zIndex="1000" display="flex" justifyContent="center">
+      <Flex 
+        width={{ base: "95%", md: "90%" }} 
+        bg="rgba(26, 26, 26, 0.6)" 
+        backdropFilter="blur(12px)"
+        boxShadow="8px 8px 16px rgba(0,0,0,0.8), -8px -8px 16px rgba(255,255,255,0.05)"
+        border="1px solid rgba(255,255,255,0.05)"
+        borderRadius="full" 
+        p="10px" 
+        px="30px"
+        alignItems="center"
+      >
         <Circle
-          bg="white"
+          bg="rgba(26, 26, 26, 0.5)"
+          backdropFilter="blur(5px)"
+          boxShadow="4px 4px 8px rgba(0,0,0,0.8), -4px -4px 8px rgba(255,255,255,0.05)"
+          border="1px solid rgba(255,255,255,0.05)"
           fontSize="20px"
           justifyContent="center"
           alignItems="center"
           boxSize="50px"
           p={1}
+          overflow="hidden"
         >
-          <Image src={logo} style={{ filter: 'grayscale(100%)' }} />
+          <Image src={logo} />
         </Circle>
         <Spacer />
 

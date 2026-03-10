@@ -9,6 +9,7 @@ import {
   SimpleGrid,
   Text,
 } from "@chakra-ui/react";
+import { motion } from "framer-motion";
 import React from "react";
 import communication from "../assets/images/communicative.png";
 import motivation from "../assets/images/self-motivation.png";
@@ -26,13 +27,15 @@ export default function Hiresection() {
         </HStack>
 
         <SimpleGrid minChildWidth={{ base: "200px", md: "270", xl: "270" }} spacing="2">
-          <Box>
+          <Box as={motion.div} initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.5, delay: 0.1 }}>
             <Box px="2rem">  <Image
               margin="auto"
               borderRadius="45px"
-              bg="rgba(255,255,255,0.05)"
+              bg="transparent"
+              border="2px solid #ff5403"
+              p={4}
               src={communication}
-
+              style={{ filter: "grayscale(0%)" }}
             /></Box>
 
             <Box textAlign="center" my="8">
@@ -45,15 +48,17 @@ export default function Hiresection() {
               </Text>
             </Box>
           </Box>
-          <Box px="rem">
+          <Box as={motion.div} initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.5, delay: 0.2 }} px="rem">
 
             <Box px="2rem">
               <Image
                 margin="auto"
                 borderRadius="45px"
-                bg="rgba(255,255,255,0.05)"
+                bg="transparent"
+                border="2px solid #ff5403"
+                p={4}
                 src={collaborative}
-                style={{ filter: "grayscale(100%)" }}
+                style={{ filter: "grayscale(0%)" }}
               />
             </Box>
 
@@ -66,8 +71,8 @@ export default function Hiresection() {
               </Text>
             </Box>
           </Box>
-          <Box px="0rem">
-            <Box px="2rem">  <Image margin="auto" borderRadius="45px" bg="rgba(255,255,255,0.05)" src={work} style={{ filter: "grayscale(100%)" }} /></Box>
+          <Box as={motion.div} initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.5, delay: 0.3 }} px="0rem">
+            <Box px="2rem">  <Image margin="auto" borderRadius="45px" bg="transparent" border="2px solid #ff5403" p={4} src={work} style={{ filter: "grayscale(0%)" }} /></Box>
 
             <Box textAlign="center" my="8">
               <Text as="b" fontSize="2xl" color="gray.300">
@@ -78,9 +83,9 @@ export default function Hiresection() {
               </Text>
             </Box>
           </Box>
-          <Box px="0rem">
+          <Box as={motion.div} initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.5, delay: 0.4 }} px="0rem">
 
-            <Box px="2rem">  <Image margin="auto" borderRadius="45px" bg="rgba(255,255,255,0.05)" src={motivation} style={{ filter: "grayscale(100%)" }} /></Box>
+            <Box px="2rem">  <Image margin="auto" borderRadius="45px" bg="transparent" border="2px solid #ff5403" p={4} src={motivation} style={{ filter: "grayscale(0%)" }} /></Box>
             <Box textAlign="center" my="8">
               <Text as="b" fontSize="2xl" color="gray.300">
                 self Motivated
@@ -94,7 +99,7 @@ export default function Hiresection() {
       </Box>
       {/* hire  me button and email button*/}
       <Box px="0.5rem" my="6rem">
-        <Grid templateColumns="repeat(12, 1fr)" bg="rgba(255,255,255,0.02)" border="1px solid rgba(255,255,255,0.05)" color="white" borderRadius="25px" p="4rem">
+        <Grid templateColumns="repeat(12, 1fr)" bg="transparent" border="1px solid #ff5403" color="white" borderRadius="25px" p="4rem">
           <GridItem colSpan={{ base: 12, md: 6, xl: 6 }} as="b" fontSize="30" textAlign="center">
 
             Interested in working with me?
@@ -110,13 +115,17 @@ export default function Hiresection() {
                 p="6"
                 fontSize="19"
                 minwidth="120px"
-                color="black"
+                bg="transparent"
+                border="1px solid #ff5403"
+                color="#ff5403"
+                _hover={{ bg: "#ff5403", color: "white" }}
+                transition="all 0.3s ease"
                 leftIcon={<AiOutlineMail />}
               >
                 {" "}
                 Email me
               </Button>
-              <Button p="6" fontSize="19" minwidth="170px" variant={"outline"}>
+              <Button p="6" fontSize="19" minwidth="170px" bg="transparent" border="1px solid #ff5403" color="#ff5403" _hover={{ bg: "#ff5403", color: "white" }} transition="all 0.3s ease">
                 {" "}
                 See more project
               </Button>

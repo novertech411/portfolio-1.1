@@ -1,29 +1,67 @@
-import { Box, Button, FormControl, Heading, Input, Stack, Text, Textarea } from '@chakra-ui/react'
+import { Box, Button, FormControl, Heading, Input, Stack, Text, Textarea, Flex, Link } from '@chakra-ui/react'
 import React from 'react'
+import { AiOutlineMail, AiOutlinePhone, AiOutlineEnvironment } from 'react-icons/ai'
 
 export default function Contact() {
   return (
-    <Box id="contact" bg='black' pt="5rem" pb="20rem" borderTop="1px solid gray" >
-      <Stack gap={5} textAlign="center" justifyContent="center" p={{ xl: "5%" }} width={{ base: "80%", md: "75%", xl: "75%" }} m="auto" >
-        <Heading color="white"> i'd love to hear from you</Heading>
-        <Text color="gray.400">just a quick chat? - Dm on Twitter <Button color="white" _hover={{ color: "gray.300" }} variant="unstyled">@NoverPrime_at_Tweet</Button></Text>
-        <Box mx="auto">
-          <Heading m="" color="white">or</Heading>
-          <FormControl width="20rem" m="auto" >
-            <Text color="gray.400">Simple leave a message</Text>
-
-            <Input my="1rem" py="2rem" border='1px solid gray' bg="gray.800" color="white" type='email' placeholder="Name" />
-            <Input my="1rem" py="2rem" border='1px solid gray' bg="gray.800" color="white" type='email' placeholder="Email" />
-            <Textarea height="" my="1rem" py="2rem" border='1px solid gray' bg="gray.800" color="white" placeholder="Message" >
-
-            </Textarea>
-          </FormControl>
-          <Button ml="auto" bg="white" color="black" _hover={{ bg: "gray.300" }}> Send message</Button>
+    <Box id="contact" bg='rgba(26, 26, 26, 0.6)' backdropFilter="blur(20px)" pt="8rem" pb="12rem" borderTop="1px solid rgba(255,255,255,0.05)" boxShadow="0 -10px 15px rgba(0,0,0,0.5)">
+      <Stack gap={10} p={{ xl: "5%" }} width={{ base: "90%", md: "85%", xl: "75%" }} m="auto" >
+        <Box textAlign="center">
+          <Heading color="white" mb={4}>Get In Touch</Heading>
+          <Text color="gray.400">Let's build something amazing together.</Text>
         </Box>
 
-        <Box></Box>
+        <Flex direction={{ base: "column", lg: "row" }} gap={10} justifyContent="center" alignItems="center">
+          {/* Contact Details */}
+          <Box flex="1" w="100%" bg="#1a1a1a" p={10} borderRadius="2xl" boxShadow="8px 8px 16px rgba(0,0,0,0.8), -8px -8px 16px rgba(255,255,255,0.05)">
+            <Stack spacing={8}>
+              <Flex align="center" gap={5}>
+                <Box p={4} bg="rgba(26,26,26,0.5)" borderRadius="full" boxShadow="inset 4px 4px 8px rgba(0,0,0,0.8), inset -4px -4px 8px rgba(255,255,255,0.05)">
+                  <AiOutlineMail size={24} color="#ff5403" />
+                </Box>
+                <Box>
+                  <Text color="gray.500" fontSize="sm">Email</Text>
+                  <Link href="mailto:sholayeeyinmosan@gmail.com" color="white" fontWeight="medium" _hover={{ color: "#ff5403" }}>
+                    sholayeeyinmosan@gmail.com
+                  </Link>
+                </Box>
+              </Flex>
+
+              <Flex align="center" gap={5}>
+                <Box p={4} bg="rgba(26,26,26,0.5)" borderRadius="full" boxShadow="inset 4px 4px 8px rgba(0,0,0,0.8), inset -4px -4px 8px rgba(255,255,255,0.05)">
+                  <AiOutlinePhone size={24} color="#ff5403" />
+                </Box>
+                <Box>
+                  <Text color="gray.500" fontSize="sm">Phone</Text>
+                  <Text color="white" fontWeight="medium">+234 906 756 6893</Text>
+                </Box>
+              </Flex>
+
+              <Flex align="center" gap={5}>
+                <Box p={4} bg="rgba(26,26,26,0.5)" borderRadius="full" boxShadow="inset 4px 4px 8px rgba(0,0,0,0.8), inset -4px -4px 8px rgba(255,255,255,0.05)">
+                  <AiOutlineEnvironment size={24} color="#ff5403" />
+                </Box>
+                <Box>
+                  <Text color="gray.500" fontSize="sm">Location</Text>
+                  <Text color="white" fontWeight="medium">Lagos, Nigeria</Text>
+                </Box>
+              </Flex>
+            </Stack>
+          </Box>
+
+          {/* Contact Form */}
+          <Box flex="1" w="100%">
+            <FormControl m="auto" >
+              <Input mb="1.5rem" py="2rem" border='1px solid rgba(255,255,255,0.05)' borderRadius="15px" bg="rgba(26,26,26,0.3)" backdropFilter="blur(10px)" boxShadow="inset 5px 5px 10px rgba(0,0,0,0.8), inset -5px -5px 10px rgba(255,255,255,0.05)" color="white" _focus={{ boxShadow: "inset 2px 2px 5px rgba(0,0,0,0.8), inset -2px -2px 5px rgba(255,255,255,0.05)", outline: "none" }} type='text' placeholder="Your Name" />
+              <Input mb="1.5rem" py="2rem" border='1px solid rgba(255,255,255,0.05)' borderRadius="15px" bg="rgba(26,26,26,0.3)" backdropFilter="blur(10px)" boxShadow="inset 5px 5px 10px rgba(0,0,0,0.8), inset -5px -5px 10px rgba(255,255,255,0.05)" color="white" _focus={{ boxShadow: "inset 2px 2px 5px rgba(0,0,0,0.8), inset -2px -2px 5px rgba(255,255,255,0.05)", outline: "none" }} type='email' placeholder="Your Email" />
+              <Textarea height="150px" mb="1.5rem" py="1.5rem" border='1px solid rgba(255,255,255,0.05)' borderRadius="15px" bg="rgba(26,26,26,0.3)" backdropFilter="blur(10px)" boxShadow="inset 5px 5px 10px rgba(0,0,0,0.8), inset -5px -5px 10px rgba(255,255,255,0.05)" color="white" _focus={{ boxShadow: "inset 2px 2px 5px rgba(0,0,0,0.8), inset -2px -2px 5px rgba(255,255,255,0.05)", outline: "none" }} placeholder="Your Message" >
+
+              </Textarea>
+            </FormControl>
+            <Button w="100%" py="2rem" top="0" bg="#ff5403" color="white" border="none" borderRadius="full" boxShadow="8px 8px 16px rgba(0,0,0,0.8), -8px -8px 16px rgba(255,255,255,0.05)" _hover={{ opacity: 0.9 }} _active={{ outline: "none", boxShadow: "inset 5px 5px 10px rgba(0,0,0,0.8), inset -5px -5px 10px rgba(255,255,255,0.05)" }}> Send Message</Button>
+          </Box>
+        </Flex>
       </Stack>
     </Box>
   )
 }
-//<svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 16 16" class="back-to-top__icon" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M16 8A8 8 0 1 0 0 8a8 8 0 0 0 16 0zm-7.5 3.5a.5.5 0 0 1-1 0V5.707L5.354 7.854a.5.5 0 1 1-.708-.708l3-3a.5.5 0 0 1 .708 0l3 3a.5.5 0 0 1-.708.708L8.5 5.707V11.5z"></path></svg>
