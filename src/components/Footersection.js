@@ -49,7 +49,7 @@ export default function Footersection() {
         </Box>
       </Box>
       <Flex px="8%" py="1.5rem" >
-        <Flex > <Text pt="0.5" pr="0.5" ><AiOutlineCopyrightCircle /></Text>   <Text>2023 Sholaye. All right reserved.</Text> </Flex>
+        <Flex > <Text pt="0.5" pr="0.5" ><AiOutlineCopyrightCircle /></Text>   <Text>2026 Sholaye. All rights reserved.</Text> </Flex>
         <Spacer />
         <Box>Made with 💖 by Me!</Box>
       </Flex>

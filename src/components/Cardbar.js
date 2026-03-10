@@ -1,44 +1,34 @@
-import { Button, Card, CardBody, CardFooter, Divider, Flex, Image, Stack, Text } from '@chakra-ui/react'
+import { Button, Card, CardBody, CardFooter, Divider, Flex, Image, Stack, Text, Box } from '@chakra-ui/react'
 import React from 'react'
-import node from "../assets/images/nodejs.svg"
-import mongodb from "../assets/images/mongodb.svg"
-import react from "../assets/images/react.svg"
 import { ViewIcon } from "@chakra-ui/icons";
 import { BiDetail } from "react-icons/bi";
 import projectImage from "../assets/images/project1.webp";
 
-
-export default function Cardbar() {
+export default function Cardbar({ title, description, techStack, previewLink, detailsLink }) {
   return (
+    <Card bg="rgba(255,255,255,0.02)" border="1px solid rgba(255,255,255,0.05)" color="white" width={{ base: "100%", md: "300px", xl: "340px" }} pos="relative" overflow="hidden" _hover={{ transform: "translateY(-5px)", borderColor: "rgba(255,84,3,0.5)" }} transition="all 0.3s ease">
+      <Image borderTopRadius="10px" objectFit="cover" h="200px" w="100%" src={projectImage} style={{ filter: "grayscale(100%)" }} />
+      <CardBody px="5" py="5">
+        <Stack spacing="4">
+          <Text fontSize="xl" fontWeight="bold">{title}</Text>
+          {description && <Text color="gray.400" fontSize="sm" minH="60px" lineHeight="1.6">{description}</Text>}
 
-    <Card bg="gray.800" color="white" width={{ base: "80%", md: "250px", xl: "340px" }} pos="relative"  >
-      <Image borderTopRadius="10px" objectFit="cover" src={projectImage} style={{ filter: "grayscale(100%)" }} />
-      <CardBody px="1" >
-        <Stack gap={{ xl: "8" }} direction={{ base: 'row', md: 'column', xl: "row" }} p="5px" justifyContent="center" >
-
-          <Text p="px" fontSize="2xl"  >Personal Portfolio website</Text>
-
-
-          <Flex justifyContent="center" pos="absolute" width="30%" p="4px" bg="rgba(50, 50, 50, 0.8)" borderRadius="20px" top="7rem" right="3">
-
-            <Image Width="30%" src={react} />
-            <Image Width="30%" src={mongodb} />
-            <Image Width="30%" src={node} />
-
-
+          <Flex wrap="wrap" gap={2} mt={2}>
+            {techStack?.map((tech, i) => (
+              <Box key={i} px={3} py={1} bg="rgba(255,255,255,0.05)" border="1px solid rgba(255,255,255,0.1)" borderRadius="full" fontSize="xs" color="gray.300">
+                {tech}
+              </Box>
+            ))}
           </Flex>
         </Stack>
       </CardBody>
       <Divider color="gray.600" />
-      <CardFooter p="5px">
-        <Stack direction='row' justifyContent="center" width="100%" gap={{ base: "20%", md: "5" }} >
-          <Button px="0px" color="white" _hover={{ background: "gray.700" }} variant="ghost" leftIcon={<BiDetail />}>Details</Button>
-
-          <Button px="0px" color="white" _hover={{ background: "gray.700" }} variant="ghost" leftIcon={<ViewIcon />}>Live Preview</Button>
+      <CardFooter p="2">
+        <Stack direction='row' justifyContent="space-around" width="100%">
+          <Button width="50%" color="white" _hover={{ background: "rgba(255,255,255,0.1)" }} variant="ghost" leftIcon={<BiDetail />}>Details</Button>
+          <Button width="50%" color="white" _hover={{ background: "rgba(255,255,255,0.1)" }} variant="ghost" leftIcon={<ViewIcon />}>Preview</Button>
         </Stack>
       </CardFooter>
     </Card>
-
-
   )
 }

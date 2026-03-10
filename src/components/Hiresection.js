@@ -30,7 +30,7 @@ export default function Hiresection() {
             <Box px="2rem">  <Image
               margin="auto"
               borderRadius="45px"
-              bg="white"
+              bg="rgba(255,255,255,0.05)"
               src={communication}
 
             /></Box>
@@ -51,7 +51,7 @@ export default function Hiresection() {
               <Image
                 margin="auto"
                 borderRadius="45px"
-                bg="white"
+                bg="rgba(255,255,255,0.05)"
                 src={collaborative}
                 style={{ filter: "grayscale(100%)" }}
               />
@@ -67,7 +67,7 @@ export default function Hiresection() {
             </Box>
           </Box>
           <Box px="0rem">
-            <Box px="2rem">  <Image margin="auto" borderRadius="45px" bg="white" src={work} style={{ filter: "grayscale(100%)" }} /></Box>
+            <Box px="2rem">  <Image margin="auto" borderRadius="45px" bg="rgba(255,255,255,0.05)" src={work} style={{ filter: "grayscale(100%)" }} /></Box>
 
             <Box textAlign="center" my="8">
               <Text as="b" fontSize="2xl" color="gray.300">
@@ -80,7 +80,7 @@ export default function Hiresection() {
           </Box>
           <Box px="0rem">
 
-            <Box px="2rem">  <Image margin="auto" borderRadius="45px" bg="white" src={motivation} style={{ filter: "grayscale(100%)" }} /></Box>
+            <Box px="2rem">  <Image margin="auto" borderRadius="45px" bg="rgba(255,255,255,0.05)" src={motivation} style={{ filter: "grayscale(100%)" }} /></Box>
             <Box textAlign="center" my="8">
               <Text as="b" fontSize="2xl" color="gray.300">
                 self Motivated
@@ -94,7 +94,7 @@ export default function Hiresection() {
       </Box>
       {/* hire  me button and email button*/}
       <Box px="0.5rem" my="6rem">
-        <Grid templateColumns="repeat(12, 1fr)" bg="gray.800" color="white" borderRadius="25px" p="4rem">
+        <Grid templateColumns="repeat(12, 1fr)" bg="rgba(255,255,255,0.02)" border="1px solid rgba(255,255,255,0.05)" color="white" borderRadius="25px" p="4rem">
           <GridItem colSpan={{ base: 12, md: 6, xl: 6 }} as="b" fontSize="30" textAlign="center">
 
             Interested in working with me?

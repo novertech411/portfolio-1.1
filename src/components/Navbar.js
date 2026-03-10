@@ -75,23 +75,23 @@ export default function Navbar() {
         <Show above="md">
           <HStack spacing={6} mr="40px">
             <a href="#home">
-              <Text _hover={{ color: "gray.300" }} as="b" color="white">
+              <Text _hover={{ color: "#ff5403" }} as="b" color="white" transition="all 0.3s">
                 Home
               </Text>
             </a>
-            <a href="#work">
-              <Text _hover={{ color: "gray.300" }} as="b" color="white">
-                Work
+            <a href="#experience">
+              <Text _hover={{ color: "#ff5403" }} as="b" color="white" transition="all 0.3s">
+                Experience
               </Text>
             </a>
-            <a href="#about">
-              <Text _hover={{ color: "gray.300" }} as="b" color="white">
-                About me
+            <a href="#projects">
+              <Text _hover={{ color: "#ff5403" }} as="b" color="white" transition="all 0.3s">
+                Projects
               </Text>
             </a>
-            <a href="#contact">
-              <Text _hover={{ color: "gray.300" }} as="b" color="white">
-                Contact
+            <a href="#skills">
+              <Text _hover={{ color: "#ff5403" }} as="b" color="white" transition="all 0.3s">
+                Skills
               </Text>
             </a>
           </HStack>
@@ -158,34 +158,34 @@ export default function Navbar() {
               <Text as="b"> Home </Text>
             </a>
             <a
-              href="#work"
+              href="#experience"
               onClick={() => {
                 handleSet();
                 handleCheck();
               }}
               style={{ color: "white" }}
             >
-              <Text as="b"> Work </Text>
+              <Text as="b"> Experience </Text>
             </a>
             <a
-              href="#about"
+              href="#projects"
               onClick={() => {
                 handleSet();
                 handleCheck();
               }}
               style={{ color: "white" }}
             >
-              <Text as="b"> About </Text>
+              <Text as="b"> Projects </Text>
             </a>
             <a
-              href="#contact"
+              href="#skills"
               onClick={() => {
                 handleSet();
                 handleCheck();
               }}
               style={{ color: "white" }}
             >
-              <Text as="b"> Contact </Text>
+              <Text as="b"> Skills </Text>
             </a>
           </Stack>
         </Flex>

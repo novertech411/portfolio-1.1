@@ -20,7 +20,12 @@ const colors = {
   },
 };
 
-const theme = extendTheme({ colors });
+const config = {
+  initialColorMode: 'dark',
+  useSystemColorMode: false,
+};
+
+const theme = extendTheme({ colors, config });
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>

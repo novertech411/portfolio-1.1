@@ -1,10 +1,8 @@
 import {
-  AiOutlineLink,
   AiOutlineTwitter,
-  AiFillMediumSquare,
   AiFillGithub,
-  AiOutlineMail,
   AiOutlineCloudDownload,
+  AiFillLinkedin
 } from "react-icons/ai";
 
 import {
@@ -14,184 +12,174 @@ import {
   IconButton,
   Image,
   Link,
-  Stack,
   Text,
+  Container
 } from "@chakra-ui/react";
 import avater from "../assets/images/animate.png";
 import { Typewriter } from "react-simple-typewriter";
 import Projectsection from "../components/Projectsection";
 import Hiresection from "../components/Hiresection";
+import Marquee from "../components/Marquee";
+import ExperienceTree from "../components/ExperienceTree";
+import SkillsAndEducation from "../components/SkillsAndEducation";
 import "../components/bubble.css";
 import { useState } from "react";
 import resuma from "../assets/resuma/Emmanuel sholaye.pdf";
+
 export default function Home() {
-  const [isActive, setActive] = useState("false");
-
-  function handleClick() {
-    setActive(!isActive);
-  }
-
   return (
-    <Box id="home" py="5rem">
-      <Box
-        p={{ base: "0%", xl: "5%" }}
-        width={{ base: "90%", md: "75%", xl: "75%" }}
-        mx="auto"
-      >
+    <Box id="home" pt="10rem" pb="5rem" bg="#050505" color="white" minH="100vh">
+      <Container maxW="container.xl">
         <Flex
-          flexDirection={{ base: "column", md: "row" }}
-          justifyContent={{ md: "space-evenly", xl: "space-evenly" }}
+          flexDirection={{ base: "column", lg: "row" }}
+          justifyContent="space-between"
+          alignItems="center"
+          gap={10}
         >
-          <Box
-            textAlign={{ base: "center", md: "left" }}
-            ml={{ md: "2rem", xl: "2rem" }}
-            py="1rem"
-          >
-            <Text as="b" fontSize="xl">
-              Hay!
+          <Box flex="1" textAlign={{ base: "center", lg: "left" }}>
+            <Flex alignItems="center" gap={2} mb={4} justifyContent={{ base: "center", lg: "flex-start" }}>
+              <Text color="yellow.400" fontSize="xl">👋</Text>
+              <Text color="gray.400" fontSize="lg" fontWeight="medium">Hey There!</Text>
+            </Flex>
+
+            <Text fontSize={{ base: "5xl", md: "7xl" }} fontWeight="800" lineHeight="1.1" mb={6}>
+              I'm Eyinmosan <br />
+              <Text as="span" color="#ff5403">Sholaye</Text>
             </Text>
-            <Text fontSize="5xl">
-              I'm <span style={{ color: "white" }}>Sholaye</span>
-            </Text>
-            <Box
-              as="b"
-              fontSize="3xl"
-              color="gray.400"
-              justifyContent="center"
-            >
+
+            <Box fontSize={{ base: "2xl", md: "3xl" }} fontWeight="600" color="gray.300" mb={6}>
               <Typewriter
-                words={["web developer", "technical writer", "oss contributor"]}
+                words={["Frontend Developer", "React & Next.js Expert", "UI/UX Enthusiast"]}
                 loop={false}
                 cursor
-                cursorStyle="<"
+                cursorStyle="_"
                 typeSpeed={70}
-                cursorColor="white"
-                deleteSpeed={190}
+                cursorColor="#ff5403"
+                deleteSpeed={50}
                 delaySpeed={2000}
               />
             </Box>
-            <Box fontSize="1xl" color="gray.400">
-              I have a passion for technology.
-            </Box>
-            <Box my="3" color="gray.400" flexDirection="row">
-              <a href="#about">
-                <Button
-                  fontSize="1xl"
-                  variant="unstyled"
-                  p="0"
-                  _hover={{ color: "gray.300" }}
-                  color="white"
-                  rightIcon={<AiOutlineLink />}
-                >
-                  know More
-                </Button>
-              </a>
-              &nbsp;about me
-            </Box>
-            <Flex fontSize="18" justifyContent={{ base: "center", md: "left" }}>
-              <Box my="auto"> Follow me &nbsp; </Box>
 
-              <Flex>
-                <Link href="https://x.com/NoverPrime" isExternal>
-                  <IconButton
-                    variant="unstyled"
-                    fontSize={30}
-                    _hover={{ color: "#26a7de" }}
-                    icon={<AiOutlineTwitter />}
-                  />{" "}
-                </Link>
+            <Text fontSize="lg" color="gray.400" mb={8} maxW="container.md" mx={{ base: "auto", lg: "0" }} lineHeight="1.8">
+              Frontend Developer with experience in designing, building, and maintaining web applications.
+              Proficient in React, Next.js, CSS, JavaScript, TypeScript, and various front-end development tools.
+              Proven track record in collaborating with cross-functional teams to develop and implement innovative features.
+              Passionate about leveraging expertise to support cutting-edge web solutions, ensure top software performance,
+              and nurture vibrant developer communities.
+            </Text>
 
-                <Link href="https://github.com/novertech411" isExternal>
-                  <IconButton
-                    variant="unstyled"
-                    fontSize={30}
-                    _hover={{ color: "#6c757d" }}
-                    icon={<AiFillGithub />}
-                  />{" "}
+            <Flex
+              gap={8}
+              mb={8}
+              flexWrap="wrap"
+              justifyContent={{ base: "center", lg: "flex-start" }}
+              borderTop="1px solid rgba(255,255,255,0.1)"
+              borderBottom="1px solid rgba(255,255,255,0.1)"
+              py={6}
+            >
+              <Box>
+                <Text color="gray.500" fontSize="sm" mb={1}>Email</Text>
+                <Link href="mailto:sholayeeyinmosan@gmail.com" fontWeight="medium" _hover={{ color: "#ff5403" }}>
+                  sholayeeyinmosan@gmail.com
                 </Link>
-                <Link href="https://medium.com/@novertech4" isExternal>
-                  <IconButton
-                    variant="unstyled"
-                    fontSize={30}
-                    _hover={{ color: "#6c757d" }}
-                    icon={<AiFillMediumSquare />}
-                  />{" "}
+              </Box>
+              <Box>
+                <Text color="gray.500" fontSize="sm" mb={1}>Phone</Text>
+                <Text fontWeight="medium">+234 906 756 6893</Text>
+              </Box>
+              <Box>
+                <Text color="gray.500" fontSize="sm" mb={1}>Website</Text>
+                <Link href="https://sholadev.vercel.app/" isExternal fontWeight="medium" _hover={{ color: "#ff5403" }}>
+                  sholadev.vercel.app
                 </Link>
-              </Flex>
+              </Box>
             </Flex>
 
-            <Stack
-              my={8}
-              direction="row"
-              spacing={7}
-              justifyContent={{ base: "center", md: "left" }}
-            >
-              <a href="#contact">
+            <Flex gap={4} justifyContent={{ base: "center", lg: "flex-start" }} alignItems="center">
+              <Link href="https://www.linkedin.com/in/eyinmosan-sholaye-080732172" isExternal>
+                <IconButton
+                  variant="unstyled"
+                  fontSize="2xl"
+                  color="gray.400"
+                  _hover={{ color: "#0077b5", transform: "translateY(-2px)" }}
+                  transition="all 0.2s"
+                  icon={<AiFillLinkedin />}
+                />
+              </Link>
+              <Link href="https://github.com/novertech411" isExternal>
+                <IconButton
+                  variant="unstyled"
+                  fontSize="2xl"
+                  color="gray.400"
+                  _hover={{ color: "white", transform: "translateY(-2px)" }}
+                  transition="all 0.2s"
+                  icon={<AiFillGithub />}
+                />
+              </Link>
+              <Link href="https://x.com/NoverPrime" isExternal>
+                <IconButton
+                  variant="unstyled"
+                  fontSize="2xl"
+                  color="gray.400"
+                  _hover={{ color: "#1DA1F2", transform: "translateY(-2px)" }}
+                  transition="all 0.2s"
+                  icon={<AiOutlineTwitter />}
+                />
+              </Link>
+
+              <Link as="a" href={resuma} download="Emmanuel_Sholaye.pdf" style={{ textDecoration: 'none', marginLeft: 'auto' }}>
                 <Button
-                  fontSize="17"
-                  boxShadow="0px 2px 8px 0px rgba(255,255,255,0.2)"
-                  bg="white"
-                  color="black"
-                  borderRadius={10}
-                  py={7}
-                  px={4}
-                  fontWeight="light"
-                  _hover={{ background: "gray.300" }}
-                  leftIcon={<AiOutlineMail />}
-                  className={"confetti-button animate"}
-                  id="button"
-                  onClick={handleClick}
-                >
-                  Email me
-                </Button>
-              </a>
-              <Link as="a" href={resuma} download="Emmanuel_Sholaye.pdf" style={{ textDecoration: 'none' }}>
-                <Button
-                  fontSize="17"
-                  boxShadow="0px 2px 8px 0px rgba(255,255,255,0.2)"
-                  colorScheme="gray"
+                  bg="transparent"
                   color="white"
-                  py={7}
-                  px={4}
-                  border="1px"
-                  borderRadius={10}
-                  _hover={{ background: "gray.700" }}
-                  borderColor="white"
-                  fontWeight="light"
-                  leftIcon={<AiOutlineCloudDownload />}
-                  className={"confetti-button animate"}
+                  border="1px solid rgba(255,255,255,0.2)"
+                  px={8}
+                  py={6}
+                  borderRadius="full"
+                  _hover={{ bg: "white", color: "black" }}
+                  rightIcon={<AiOutlineCloudDownload />}
+                  transition="all 0.3s ease"
                 >
-                  Resume
+                  Download Resume
                 </Button>
               </Link>
-            </Stack>
+            </Flex>
           </Box>
-          <Box pb="3rem">
-            <Image
-              ml={{}}
-              m={{ base: "auto", md: "left", xl: "auto" }}
-              width={{ base: "80%", md: "80%", xl: "90%" }}
-              src={avater}
-            />
+
+          <Box flex="1" display="flex" justifyContent={{ base: "center", lg: "flex-end" }}>
+            <Box
+              position="relative"
+              _before={{
+                content: '""',
+                position: "absolute",
+                top: "-5%",
+                left: "-5%",
+                width: "110%",
+                height: "110%",
+                background: "radial-gradient(circle, rgba(255,84,3,0.15) 0%, rgba(0,0,0,0) 70%)",
+                zIndex: 0
+              }}
+            >
+              <Image
+                src={avater}
+                alt="Eyinmosan Sholaye"
+                width={{ base: "80%", md: "400px" }}
+                height="auto"
+                mx="auto"
+                position="relative"
+                zIndex={1}
+                filter="drop-shadow(0px 20px 30px rgba(0,0,0,0.5))"
+              />
+            </Box>
           </Box>
         </Flex>
-        {/* <Herosection /> */}
-        <Projectsection />
-        <Hiresection />
-      </Box >
-    </Box >
+      </Container>
+
+      <Marquee />
+      <ExperienceTree />
+      <SkillsAndEducation />
+
+      <Projectsection />
+      <Hiresection />
+    </Box>
   );
 }
-
-// //  <a style={{ hover: { color: "#0d6efd" } }}>
-// <AiOutlineTwitter />
-// </a>
-// <a>
-
-//   <AiFillGithub />
-// </a>{" "}
-// <a>
-//   {" "}
-//   <AiFillMediumSquare />
-// </a>
-///*{`confetti-button ${isActive ? "animate":"null"}` }  */
