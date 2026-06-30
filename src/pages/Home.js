@@ -12,12 +12,13 @@ import {
   Button,
   Flex,
   IconButton,
-  Image,
   Link,
   Text,
-  Container
+  Container,
+  Circle,
+  VStack,
+  HStack
 } from "@chakra-ui/react";
-import avater from "../assets/images/animate.png";
 import { Typewriter } from "react-simple-typewriter";
 import Projectsection from "../components/Projectsection";
 import Hiresection from "../components/Hiresection";
@@ -26,8 +27,133 @@ import ExperienceTree from "../components/ExperienceTree";
 import SkillsAndEducation from "../components/SkillsAndEducation";
 import Contact from "./Contact";
 import "../components/bubble.css";
-import { useState } from "react";
 import resuma from "../assets/resuma/Emmanuel sholaye.pdf";
+
+// A beautiful, interactive syntax-highlighted code editor mockup
+const CodeBox = () => {
+  return (
+    <Box
+      as={motion.div}
+      initial={{ opacity: 0, scale: 0.95 }}
+      animate={{ opacity: 1, scale: 1 }}
+      transition={{ duration: 0.8, delay: 0.2 }}
+      w="100%"
+      maxW={{ base: "100%", md: "500px", lg: "520px" }}
+      bg="#121212"
+      borderRadius="2xl"
+      boxShadow="0 25px 50px -12px rgba(0, 0, 0, 0.7), 8px 8px 16px rgba(0,0,0,0.8), -8px -8px 16px rgba(255,255,255,0.02)"
+      border="1px solid rgba(255, 255, 255, 0.05)"
+      overflow="hidden"
+    >
+      {/* OS-style Title Bar */}
+      <Flex
+        bg="#181818"
+        px={5}
+        py={3.5}
+        alignItems="center"
+        borderBottom="1px solid rgba(255, 255, 255, 0.05)"
+        justifyContent="space-between"
+      >
+        <Flex gap={2}>
+          <Circle size="12px" bg="#ff5f56" />
+          <Circle size="12px" bg="#ffbd2e" />
+          <Circle size="12px" bg="#27c93f" />
+        </Flex>
+
+        {/* Filename tab with active state styling */}
+        <Flex
+          bg="#121212"
+          px={4}
+          py={1.5}
+          borderRadius="md"
+          border="1px solid rgba(255, 255, 255, 0.05)"
+          borderBottom="none"
+          alignItems="center"
+          gap={2}
+        >
+          <Text fontSize="xs" fontWeight="bold" color="#ff5403">JS</Text>
+          <Text color="gray.300" fontSize="xs" fontWeight="semibold">
+            developer.js
+          </Text>
+        </Flex>
+
+        <Box w="36px" /> {/* spacing placeholder */}
+      </Flex>
+
+      {/* Editor Body */}
+      <Flex p={5} overflowX="auto" fontSize={{ base: "xs", md: "sm" }} fontFamily="mono" lineHeight="1.6" textAlign="left">
+        {/* Line Numbers */}
+        <VStack spacing={0} align="flex-end" pr={4} color="gray.600" userSelect="none" borderRight="1px solid rgba(255, 255, 255, 0.05)">
+          {Array.from({ length: 18 }, (_, i) => (
+            <Text key={i} fontSize="xs">{String(i + 1).padStart(2, '0')}</Text>
+          ))}
+        </VStack>
+
+        {/* Code Content */}
+        <Box pl={4} flex="1" whiteSpace="pre">
+          <Text as="span" color="#c678dd">const </Text>
+          <Text as="span" color="#e5c07b">developer </Text>
+          <Text as="span" color="#56b6c2">= </Text>
+          <Text as="span" color="white">{"{"}</Text>
+          {"\n"}
+          <Text as="span" color="#e06c75">  name</Text>
+          <Text as="span" color="white">: </Text>
+          <Text as="span" color="#98c379">"Eyinmosan Sholaye"</Text>
+          <Text as="span" color="white">,</Text>
+          {"\n"}
+          <Text as="span" color="#e06c75">  role</Text>
+          <Text as="span" color="white">: </Text>
+          <Text as="span" color="#98c379">"Lead Frontend Developer"</Text>
+          <Text as="span" color="white">,</Text>
+          {"\n"}
+          <Text as="span" color="#e06c75">  experience</Text>
+          <Text as="span" color="white">: </Text>
+          <Text as="span" color="#98c379">"4+ Years"</Text>
+          <Text as="span" color="white">,</Text>
+          {"\n"}
+          <Text as="span" color="#e06c75">  skills</Text>
+          <Text as="span" color="white">: [</Text>
+          {"\n"}
+          <Text as="span" color="#98c379">    "React"</Text>
+          <Text as="span" color="white">, </Text>
+          <Text as="span" color="#98c379">"Next.js"</Text>
+          <Text as="span" color="white">, </Text>
+          <Text as="span" color="#98c379">"TypeScript"</Text>
+          <Text as="span" color="white">,</Text>
+          {"\n"}
+          <Text as="span" color="#98c379">    "Chakra UI"</Text>
+          <Text as="span" color="white">, </Text>
+          <Text as="span" color="#98c379">"Tailwind CSS"</Text>
+          <Text as="span" color="white">, </Text>
+          <Text as="span" color="#98c379">"Sass"</Text>
+          <Text as="span" color="white">,</Text>
+          {"\n"}
+          <Text as="span" color="#98c379">    "Redux"</Text>
+          <Text as="span" color="white">, </Text>
+          <Text as="span" color="#98c379">"Firebase"</Text>
+          <Text as="span" color="white">, </Text>
+          <Text as="span" color="#98c379">"Supabase"</Text>
+          <Text as="span" color="white">,</Text>
+          {"\n"}
+          <Text as="span" color="#98c379">    "Electron"</Text>
+          <Text as="span" color="white">, </Text>
+          <Text as="span" color="#98c379">"Git & GitHub"</Text>
+          {"\n"}
+          <Text as="span" color="white">  ],</Text>
+          {"\n"}
+          <Text as="span" color="#e06c75">  passion</Text>
+          <Text as="span" color="white">: </Text>
+          <Text as="span" color="#98c379">"Crafting beautiful & interactive interfaces"</Text>
+          {"\n"}
+          <Text as="span" color="white">{"};"}</Text>
+          {"\n"}
+          {"\n"}
+          <Text as="span" color="gray.600">{"// Happy coding! 🚀"}</Text>
+        </Box>
+      </Flex>
+    </Box>
+  );
+};
 
 export default function Home() {
   return (
@@ -39,7 +165,7 @@ export default function Home() {
           alignItems="center"
           gap={10}
         >
-          <Box flex="1" textAlign={{ base: "center", lg: "left" }}>
+          <Box flex="1.2" textAlign={{ base: "center", lg: "left" }}>
             <Flex alignItems="center" gap={2} mb={4} justifyContent={{ base: "center", lg: "flex-start" }}>
               <Text color="yellow.400" fontSize="xl">👋</Text>
               <Text color="gray.400" fontSize="lg" fontWeight="medium">Hey There!</Text>
@@ -67,51 +193,97 @@ export default function Home() {
               Creative Frontend Developer focused on building dynamic, high-performance web applications with modern minimalist designs.
             </Text>
 
+            {/* Premium Stats Grid */}
+            <Flex
+              gap={{ base: 6, md: 10 }}
+              my={8}
+              justifyContent={{ base: "center", lg: "flex-start" }}
+              alignItems="center"
+            >
+              <Box>
+                <Text fontSize={{ base: "3xl", md: "4xl" }} fontWeight="800" color="#ff5403" lineHeight="1">
+                  4+
+                </Text>
+                <Text fontSize="xs" color="gray.400" mt={1} fontWeight="medium" textTransform="uppercase" letterSpacing="wider">
+                  Years Experience
+                </Text>
+              </Box>
+              <Box height="40px" width="1px" bg="rgba(255,255,255,0.1)" />
+              <Box>
+                <Text fontSize={{ base: "3xl", md: "4xl" }} fontWeight="800" color="#ff5403" lineHeight="1">
+                  20+
+                </Text>
+                <Text fontSize="xs" color="gray.400" mt={1} fontWeight="medium" textTransform="uppercase" letterSpacing="wider">
+                  Projects Done
+                </Text>
+              </Box>
+              <Box height="40px" width="1px" bg="rgba(255,255,255,0.1)" />
+              <Box>
+                <Text fontSize={{ base: "3xl", md: "4xl" }} fontWeight="800" color="#ff5403" lineHeight="1">
+                  100%
+                </Text>
+                <Text fontSize="xs" color="gray.400" mt={1} fontWeight="medium" textTransform="uppercase" letterSpacing="wider">
+                  Satisfaction
+                </Text>
+              </Box>
+            </Flex>
 
+            <Flex
+              direction={{ base: "column", sm: "row" }}
+              gap={6}
+              my={6}
+              alignItems="center"
+              justifyContent={{ base: "center", lg: "flex-start" }}
+              w="100%"
+            >
+              <HStack spacing={4} justifyContent="center">
+                <Link href="https://www.linkedin.com/in/eyinmosan-sholaye-080732172" isExternal>
+                  <IconButton
+                    variant="unstyled"
+                    fontSize="2xl"
+                    color="gray.400"
+                    _hover={{ color: "#0077b5", transform: "translateY(-2px)" }}
+                    transition="all 0.2s"
+                    icon={<AiFillLinkedin />}
+                    aria-label="LinkedIn Link"
+                  />
+                </Link>
+                <Link href="https://github.com/novertech411" isExternal>
+                  <IconButton
+                    variant="unstyled"
+                    fontSize="2xl"
+                    color="gray.400"
+                    _hover={{ color: "white", transform: "translateY(-2px)" }}
+                    transition="all 0.2s"
+                    icon={<AiFillGithub />}
+                    aria-label="GitHub Link"
+                  />
+                </Link>
+                <Link href="https://x.com/NoverPrime" isExternal>
+                  <IconButton
+                    variant="unstyled"
+                    fontSize="2xl"
+                    color="gray.400"
+                    _hover={{ color: "#1DA1F2", transform: "translateY(-2px)" }}
+                    transition="all 0.2s"
+                    icon={<AiOutlineTwitter />}
+                    aria-label="Twitter Link"
+                  />
+                </Link>
+                <Link href="https://wa.me/2349067566893" isExternal>
+                  <IconButton
+                    variant="unstyled"
+                    fontSize="2xl"
+                    color="gray.400"
+                    _hover={{ color: "#25D366", transform: "translateY(-2px)" }}
+                    transition="all 0.2s"
+                    icon={<AiOutlineWhatsApp />}
+                    aria-label="WhatsApp Link"
+                  />
+                </Link>
+              </HStack>
 
-            <Flex gap={4} justifyContent={{ base: "center", lg: "flex-start" }} alignItems="center">
-              <Link href="https://www.linkedin.com/in/eyinmosan-sholaye-080732172" isExternal>
-                <IconButton
-                  variant="unstyled"
-                  fontSize="2xl"
-                  color="gray.400"
-                  _hover={{ color: "#0077b5", transform: "translateY(-2px)" }}
-                  transition="all 0.2s"
-                  icon={<AiFillLinkedin />}
-                />
-              </Link>
-              <Link href="https://github.com/novertech411" isExternal>
-                <IconButton
-                  variant="unstyled"
-                  fontSize="2xl"
-                  color="gray.400"
-                  _hover={{ color: "white", transform: "translateY(-2px)" }}
-                  transition="all 0.2s"
-                  icon={<AiFillGithub />}
-                />
-              </Link>
-              <Link href="https://x.com/NoverPrime" isExternal>
-                <IconButton
-                  variant="unstyled"
-                  fontSize="2xl"
-                  color="gray.400"
-                  _hover={{ color: "#1DA1F2", transform: "translateY(-2px)" }}
-                  transition="all 0.2s"
-                  icon={<AiOutlineTwitter />}
-                />
-              </Link>
-              <Link href="https://wa.me/2349067566893" isExternal>
-                <IconButton
-                  variant="unstyled"
-                  fontSize="2xl"
-                  color="gray.400"
-                  _hover={{ color: "#25D366", transform: "translateY(-2px)" }}
-                  transition="all 0.2s"
-                  icon={<AiOutlineWhatsApp />}
-                />
-              </Link>
-
-              <Link as="a" href={resuma} download="Emmanuel_Sholaye.pdf" style={{ textDecoration: 'none', marginLeft: 'auto' }}>
+              <Link as="a" href={resuma} download="Emmanuel_Sholaye.pdf" style={{ textDecoration: 'none' }} ml={{ base: 0, sm: "auto", lg: 0 }}>
                 <Button
                   as={motion.button}
                   whileHover={{ scale: 1.02 }}
@@ -133,41 +305,22 @@ export default function Home() {
             </Flex>
           </Box>
 
-          <Box flex="1" display="flex" justifyContent={{ base: "center", lg: "flex-end" }}>
-            <Box
-              as={motion.div}
-              initial={{ opacity: 0, scale: 0.8 }}
-              animate={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 0.8, delay: 0.2 }}
-              position="relative"
-              display="inline-block"
-              borderRadius="full"
-              border="none"
-              boxShadow="12px 12px 24px rgba(0, 0, 0, 0.8), -12px -12px 24px rgba(255, 255, 255, 0.05)"
-              p={4}
-              bg="#1a1a1a"
-            >
-              <Image
-                src={avater}
-                alt="Eyinmosan Sholaye"
-                width={{ base: "80%", md: "400px" }}
-                height="auto"
-                mx="auto"
-                position="relative"
-                zIndex={1}
-              />
-            </Box>
+          <Box flex="0.8" display="flex" justifyContent={{ base: "center", lg: "flex-end" }}>
+            <CodeBox />
           </Box>
         </Flex>
       </Container>
 
       <Marquee />
+
       <ExperienceTree />
-      <SkillsAndEducation />
 
       <Projectsection />
+
+      <SkillsAndEducation />
+
       <Hiresection />
-      <Contact />
+      {/* <Contact /> */}
     </Box>
   );
 }

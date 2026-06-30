@@ -1,34 +1,26 @@
-import { Box, Container, Flex, Heading, Text, VStack, SimpleGrid, Badge, Icon } from "@chakra-ui/react";
+import { Box, Container, Flex, Heading, Text, SimpleGrid, Badge, Icon, HStack } from "@chakra-ui/react";
 import { motion } from "framer-motion";
-import { AiOutlineCode, AiOutlineTool, AiOutlineProject } from "react-icons/ai";
-
-const education = [
-    {
-        institution: "Federal University of Petroleum Resources",
-        degree: "Bachelor of Science in Physics",
-        date: "01/2015 – 01/2019"
-    }
-];
+import { FiCode, FiCpu, FiTrendingUp, FiFolder, FiBookOpen } from "react-icons/fi";
 
 const skillCategories = [
     {
         title: "Languages & Core",
-        icon: AiOutlineCode,
+        icon: FiCode,
         skills: ["HTML", "CSS", "JavaScript", "TypeScript", "Sass", "jQuery"]
     },
     {
         title: "Technologies & Frameworks",
-        icon: AiOutlineTool,
+        icon: FiCpu,
         skills: ["React", "Next.js", "Tailwind CSS", "Chakra-UI", "Material UI", "Firebase", "Electron", "Netlify", "Postman", "Strapi", "Supabase", "Git"]
     },
     {
         title: "Project Management",
-        icon: AiOutlineProject,
+        icon: FiTrendingUp,
         skills: ["Agile Methodologies", "ClickUp", "Jira"]
     },
     {
         title: "Other Skills",
-        icon: AiOutlineTool,
+        icon: FiFolder,
         skills: ["API Integration", "Communication", "Problem-Solving", "SEO"]
     }
 ];
@@ -36,120 +28,149 @@ const skillCategories = [
 export default function SkillsAndEducation() {
     return (
         <Box py={20} bg="#1a1a1a" color="white" id="skills">
-            <Container maxW="container.xl">
-                <Flex direction={{ base: "column", lg: "row" }} gap={16}>
+            <Container maxW="container.lg">
+                <Flex direction="column" gap={16}>
 
                     {/* Education Section */}
-                    <Box flex={{ base: "1", lg: "0.4" }}>
-                        <Heading
-                            fontSize="3xl"
-                            mb={10}
-                            position="relative"
-                            _after={{
-                                content: '""',
-                                position: "absolute",
-                                bottom: "-10px",
-                                left: "0",
-                                width: "40px",
-                                height: "3px",
-                                backgroundColor: "#ff5403",
-                                borderRadius: "full"
-                            }}
-                        >
-                            Education
-                        </Heading>
+                    <Box w="100%">
+                        <Flex align="center" gap={3} mb={10}>
+                            <Heading fontSize="3xl" color="white">
+                                Education
+                            </Heading>
+                            <Box flex="1" h="1px" bg="rgba(255,255,255,0.1)" ml={4} />
+                        </Flex>
 
-                        <VStack align="stretch" spacing={6}>
-                            {education.map((edu, index) => (
-                                <Box
-                                    as={motion.div}
-                                    initial={{ opacity: 0, x: -30 }}
-                                    whileInView={{ opacity: 1, x: 0 }}
-                                    viewport={{ once: true }}
-                                    transition={{ duration: 0.5 }}
-                                    key={index}
-                                    p={8}
-                                    bg="#1a1a1a"
-                                    border="none"
-                                    boxShadow="8px 8px 16px rgba(0,0,0,0.8), -8px -8px 16px rgba(255,255,255,0.05)"
-                                    borderRadius="2xl"
-                                    _hover={{ boxShadow: "10px 10px 20px rgba(0,0,0,0.9), -10px -10px 20px rgba(255,255,255,0.06)" }}
-                                    transition="all 0.3s ease"
+                        <motion.div
+                            initial={{ opacity: 0, y: 20 }}
+                            whileInView={{ opacity: 1, y: 0 }}
+                            viewport={{ once: true }}
+                            transition={{ duration: 0.5 }}
+                        >
+                            <Box
+                                bg="#1f1f1f"
+                                borderRadius="xl"
+                                border="1px solid rgba(255, 255, 255, 0.05)"
+                                boxShadow="2xl"
+                                overflow="hidden"
+                                maxW={{ base: "100%", md: "2xl" }}
+                            >
+                                {/* macOS-style Window Header */}
+                                <Flex
+                                    px={4}
+                                    py={3}
+                                    bg="#151515"
+                                    borderBottom="1px solid rgba(255, 255, 255, 0.05)"
+                                    alignItems="center"
+                                    justifyContent="space-between"
                                 >
-                                    <Text color="#ff5403" fontWeight="600" fontSize="sm" mb={2}>
-                                        {edu.date}
-                                    </Text>
-                                    <Heading fontSize="xl" mb={2} color="white">
-                                        {edu.institution}
-                                    </Heading>
-                                    <Text color="gray.400" fontSize="md">
-                                        {edu.degree}
-                                    </Text>
+                                    <HStack spacing={2}>
+                                        <Box w="12px" h="12px" borderRadius="full" bg="#ff5f56" />
+                                        <Box w="12px" h="12px" borderRadius="full" bg="#ffbd2e" />
+                                        <Box w="12px" h="12px" borderRadius="full" bg="#27c93f" />
+                                    </HStack>
+                                    <HStack spacing={2} align="center">
+                                        <Icon as={FiBookOpen} color="gray.500" fontSize="xs" />
+                                        <Text color="gray.400" fontSize="xs" fontFamily="mono">
+                                            education.json
+                                        </Text>
+                                    </HStack>
+                                    <Box w="36px" />
+                                </Flex>
+
+                                {/* JSON Code Area */}
+                                <Box p={6} fontFamily="mono" fontSize={{ base: "xs", md: "sm" }} lineHeight="1.6" textAlign="left" overflowX="auto">
+                                    <Text color="gray.500" mb={1}>{"{"}</Text>
+                                    <Box pl={4}>
+                                        <Text as="span" color="#e06c75">"institution"</Text>
+                                        <Text as="span" color="white">: </Text>
+                                        <Text as="span" color="#98c379">"Federal University of Petroleum Resources"</Text>
+                                        <Text color="white">,</Text>
+
+                                        <Text as="span" color="#e06c75">"degree"</Text>
+                                        <Text as="span" color="white">: </Text>
+                                        <Text as="span" color="#98c379">"B.Sc. in Physics"</Text>
+                                        <Text color="white">,</Text>
+
+                                        <Text as="span" color="#e06c75">"timeline"</Text>
+                                        <Text as="span" color="white">: </Text>
+                                        <Text as="span" color="#98c379">"01/2015 – 01/2019"</Text>
+                                    </Box>
+                                    <Text color="gray.500">{"}"}</Text>
                                 </Box>
-                            ))}
-                        </VStack>
+                            </Box>
+                        </motion.div>
                     </Box>
 
                     {/* Skills Section */}
-                    <Box flex={{ base: "1", lg: "0.6" }}>
-                        <Heading
-                            fontSize="3xl"
-                            mb={10}
-                            position="relative"
-                            _after={{
-                                content: '""',
-                                position: "absolute",
-                                bottom: "-10px",
-                                left: "0",
-                                width: "40px",
-                                height: "3px",
-                                backgroundColor: "#ff5403",
-                                borderRadius: "full"
-                            }}
-                        >
-                            Skills & Expertise
-                        </Heading>
+                    <Box w="100%">
+                        <Flex align="center" gap={3} mb={10}>
+                            <Heading fontSize="3xl" color="white">
+                                Skills & Expertise
+                            </Heading>
+                            <Box flex="1" h="1px" bg="rgba(255,255,255,0.1)" ml={4} />
+                        </Flex>
 
                         <SimpleGrid columns={{ base: 1, md: 2 }} spacing={6}>
                             {skillCategories.map((category, index) => (
-                                <Box
-                                    as={motion.div}
-                                    initial={{ opacity: 0, scale: 0.9 }}
-                                    whileInView={{ opacity: 1, scale: 1 }}
-                                    viewport={{ once: true }}
-                                    transition={{ duration: 0.5, delay: index * 0.1 }}
+                                <motion.div
                                     key={index}
-                                    p={6}
-                                    bg="#1a1a1a"
-                                    border="none"
-                                    boxShadow="8px 8px 16px rgba(0,0,0,0.8), -8px -8px 16px rgba(255,255,255,0.05)"
-                                    borderRadius="2xl"
-                                    transition="all 0.3s ease"
+                                    initial={{ opacity: 0, y: 20 }}
+                                    whileInView={{ opacity: 1, y: 0 }}
+                                    viewport={{ once: true }}
+                                    transition={{ duration: 0.5, delay: index * 0.05 }}
                                 >
-                                    <Flex align="center" mb={4} gap={3}>
-                                        <Icon as={category.icon} fontSize="2xl" color="#ff5403" />
-                                        <Heading fontSize="lg" color="white">{category.title}</Heading>
-                                    </Flex>
-                                    <Flex wrap="wrap" gap={2}>
-                                        {category.skills.map((skill, i) => (
-                                            <Badge
-                                                key={i}
-                                                px={4}
-                                                py={2}
-                                                bg="#1a1a1a"
-                                                color="white"
-                                                borderRadius="full"
-                                                textTransform="none"
-                                                fontSize="sm"
-                                                fontWeight="normal"
-                                                border="none"
-                                                boxShadow="inset 4px 4px 8px rgba(0,0,0,0.8), inset -4px -4px 8px rgba(255,255,255,0.05)"
-                                            >
-                                                {skill}
-                                            </Badge>
-                                        ))}
-                                    </Flex>
-                                </Box>
+                                    <Box
+                                        p={6}
+                                        bg="#1f1f1f"
+                                        borderRadius="xl"
+                                        border="1px solid rgba(255, 255, 255, 0.05)"
+                                        boxShadow="lg"
+                                        role="group"
+                                        _hover={{
+                                            borderColor: "rgba(255, 84, 3, 0.3)",
+                                            boxShadow: "0 10px 30px -15px rgba(255, 84, 3, 0.1)"
+                                        }}
+                                        transition="all 0.3s ease"
+                                    >
+                                        <Flex align="center" mb={4} gap={3}>
+                                            <Icon
+                                                as={category.icon}
+                                                fontSize="xl"
+                                                color="gray.400"
+                                                _groupHover={{ color: "#ff5403", transform: "scale(1.1)" }}
+                                                transition="all 0.3s ease"
+                                            />
+                                            <Heading fontSize="md" color="white">{category.title}</Heading>
+                                        </Flex>
+
+                                        <Flex wrap="wrap" gap={2}>
+                                            {category.skills.map((skill, i) => (
+                                                <Badge
+                                                    key={i}
+                                                    px={3}
+                                                    py={1.5}
+                                                    bg="rgba(255, 255, 255, 0.02)"
+                                                    color="gray.300"
+                                                    borderRadius="md"
+                                                    textTransform="none"
+                                                    fontSize="xs"
+                                                    fontWeight="medium"
+                                                    fontFamily="mono"
+                                                    border="1px solid rgba(255, 255, 255, 0.08)"
+                                                    _hover={{
+                                                        bg: "#ff5403",
+                                                        color: "white",
+                                                        borderColor: "#ff5403",
+                                                        transform: "translateY(-2px)"
+                                                    }}
+                                                    transition="all 0.2s"
+                                                >
+                                                    {skill}
+                                                </Badge>
+                                            ))}
+                                        </Flex>
+                                    </Box>
+                                </motion.div>
                             ))}
                         </SimpleGrid>
                     </Box>

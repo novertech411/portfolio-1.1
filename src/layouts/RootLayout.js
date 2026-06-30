@@ -29,20 +29,7 @@ export default function RootLayout({ children }) {
 
   return (
     <Box bg="dark.100" color="white" minHeight="100vh" className="layout">
-      <Flex
-        fontSize="1xl"
-        justifyContent="center"
-        p="0.6rem"
-        bg="gray.800"
-        color="gray.300"
-      >
-        <Text>Open to opportunities </Text>
-        <a href="#contact" style={{ display: "flex", alignItems: "center" }}>
-          {" "}
-          &nbsp;<Text as="u">Contact me </Text> &nbsp;
-          <Icon as={ArrowForwardIcon} />
-        </a>
-      </Flex>
+
 
       {visible && (
         <Icon

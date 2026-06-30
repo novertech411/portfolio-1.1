@@ -6,206 +6,193 @@ import {
   Show,
   HStack,
   Circle,
-  Stack,
-  Image,
+  Link,
 } from "@chakra-ui/react";
-import { useState } from "react";
-import { Input } from "@chakra-ui/react"
-import "./hamburger/hamburger.css";
+import React, { useState } from "react";
 import { motion } from "framer-motion";
-import logo from "../assets/images/brand.png"
+
+const links = [
+  { name: "Experience", href: "#experience" },
+  { name: "Projects", href: "#projects" },
+  { name: "Skills", href: "#skills" },
+  { name: "Contact", href: "#contact" }
+];
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
-  const [checked, setChecked] = useState(true);
-  const handleCheck = () => {
-    setChecked(!checked);
-  };
 
-  const handleSet = () => {
-    setIsOpen(!isOpen);
-  };
+  const toggleMenu = () => setIsOpen(!isOpen);
 
-  const containerVariants = {
-    open: (height = 1000) => ({
-      clipPath: `circle(${height * 2 + 200}px at  90% 70px)`,
-      transition: {
-        type: "spring",
-        stiffness: 20,
-        restDelta: 2,
-      },
-    }),
-    closed: {
-      clipPath: "circle(0px at 91%  95px)",
-      transition: {
-        type: "spring",
-        stiffness: 400,
-        damping: 40,
-        when: "beforeChildren",
-      },
-    },
-  };
-  const childVariants = {
+  const menuVariants = {
     open: {
-      x: 0,
-      transition: { type: "spring", dely: 2 },
+      opacity: 1,
+      y: 0,
+      scale: 1,
+      display: "block",
+      transition: {
+        type: "spring",
+        stiffness: 150,
+        damping: 20
+      }
     },
-
     closed: {
-      x: "100vw",
-      transition: { type: "spring", dely: 2 },
-    },
+      opacity: 0,
+      y: -20,
+      scale: 0.95,
+      transitionEnd: {
+        display: "none"
+      },
+      transition: {
+        type: "spring",
+        stiffness: 300,
+        damping: 30
+      }
+    }
   };
 
   return (
-    <Box position="sticky" top="4" zIndex="1000" display="flex" justifyContent="center">
-      <Flex 
-        width={{ base: "95%", md: "90%" }} 
-        bg="rgba(26, 26, 26, 0.6)" 
+    <Box
+      position="sticky"
+      top="4"
+      zIndex="1000"
+      display="flex"
+      flexDirection="column"
+      alignItems="center"
+      w="100%"
+    >
+      {/* Main Navbar Bar */}
+      <Flex
+        width={{ base: "92%", md: "90%" }}
+        bg="rgba(26, 26, 26, 0.7)"
         backdropFilter="blur(12px)"
-        boxShadow="8px 8px 16px rgba(0,0,0,0.8), -8px -8px 16px rgba(255,255,255,0.05)"
-        border="1px solid rgba(255,255,255,0.05)"
-        borderRadius="full" 
-        p="10px" 
-        px="30px"
+        border="1px solid rgba(255, 255, 255, 0.05)"
+        boxShadow="0 20px 40px -15px rgba(0, 0, 0, 0.5)"
+        borderRadius="full"
+        p="8px"
+        px="24px"
         alignItems="center"
+        transition="all 0.3s ease"
       >
-        <Circle
-          bg="rgba(26, 26, 26, 0.5)"
-          backdropFilter="blur(5px)"
-          boxShadow="4px 4px 8px rgba(0,0,0,0.8), -4px -4px 8px rgba(255,255,255,0.05)"
-          border="1px solid rgba(255,255,255,0.05)"
-          fontSize="20px"
-          justifyContent="center"
-          alignItems="center"
-          boxSize="50px"
-          p={1}
-          overflow="hidden"
-        >
-          <Image src={logo} />
-        </Circle>
+        {/* Logo / Brand Circle */}
+        <Link href="#home" style={{ textDecoration: "none" }}>
+          <Circle
+            bg="rgba(26, 26, 26, 0.8)"
+            border="1px solid rgba(255, 255, 255, 0.08)"
+            fontSize="lg"
+            fontWeight="bold"
+            boxSize="40px"
+            display="flex"
+            justifyContent="center"
+            alignItems="center"
+            _hover={{ borderColor: "#ff5403", transform: "scale(1.05)" }}
+            transition="all 0.2s"
+          >
+            <Text color="#ff5403">S</Text>
+          </Circle>
+        </Link>
+        
         <Spacer />
 
+        {/* Desktop Links (Show above md) */}
         <Show above="md">
-          <HStack spacing={6} mr="40px">
-            <a href="#home">
-              <Text _hover={{ color: "#ff5403" }} as="b" color="white" transition="all 0.3s">
-                Home
-              </Text>
-            </a>
-            <a href="#experience">
-              <Text _hover={{ color: "#ff5403" }} as="b" color="white" transition="all 0.3s">
-                Experience
-              </Text>
-            </a>
-            <a href="#projects">
-              <Text _hover={{ color: "#ff5403" }} as="b" color="white" transition="all 0.3s">
-                Projects
-              </Text>
-            </a>
-            <a href="#skills">
-              <Text _hover={{ color: "#ff5403" }} as="b" color="white" transition="all 0.3s">
-                Skills
-              </Text>
-            </a>
+          <HStack spacing={8} mr={4}>
+            {links.map((link, index) => (
+              <Link
+                key={index}
+                href={link.href}
+                _hover={{ textDecoration: "none" }}
+              >
+                <HStack spacing={1.5} color="gray.400" _hover={{ color: "white" }} transition="color 0.2s">
+                  <Text fontSize="sm" fontWeight="bold">
+                    {link.name}
+                  </Text>
+                </HStack>
+              </Link>
+            ))}
           </HStack>
         </Show>
+
+        {/* Mobile Hamburger (Show below md) */}
         <Show below="md">
-          <Box pos="fixed" right="7" zIndex={3}>
-            <Circle
-              p="2"
-              bg="white"
-              boxShadow="0 7px 29px 0 rgba(0, 0, 0, 0.3)"
+          <Box mr={2}>
+            {/* Hamburger Button */}
+            <Box
+              as="button"
+              onClick={toggleMenu}
+              display="flex"
+              flexDirection="column"
+              justifyContent="space-around"
+              width="22px"
+              height="16px"
+              background="transparent"
+              border="none"
+              cursor="pointer"
+              padding="0"
+              _focus={{ outline: "none" }}
+              aria-label="Toggle Menu"
             >
-              <div id="menu_button">
-                <Input
-                  type="checkbox"
-                  id="menu_checkbox"
-                  checked={checked}
-                  onClick={() => {
-                    handleSet();
-                    handleCheck();
-                  }}
-                />
-                <label for="menu_checkbox" id="menu_label">
-                  <div id="menu_text_bar"></div>
-                </label>
-              </div>
-            </Circle>
+              <motion.div
+                style={{ width: "22px", height: "2px", backgroundColor: "#ff5403", borderRadius: "10px", transformOrigin: "left center" }}
+                animate={isOpen ? { rotate: 45, x: 2, y: -0.5 } : { rotate: 0, x: 0, y: 0 }}
+                transition={{ duration: 0.2 }}
+              />
+              <motion.div
+                style={{ width: "22px", height: "2px", backgroundColor: "#ff5403", borderRadius: "10px" }}
+                animate={isOpen ? { opacity: 0, scale: 0.5 } : { opacity: 1, scale: 1 }}
+                transition={{ duration: 0.15 }}
+              />
+              <motion.div
+                style={{ width: "22px", height: "2px", backgroundColor: "#ff5403", borderRadius: "10px", transformOrigin: "left center" }}
+                animate={isOpen ? { rotate: -45, x: 2, y: 0.5 } : { rotate: 0, x: 0, y: 0 }}
+                transition={{ duration: 0.2 }}
+              />
+            </Box>
           </Box>
         </Show>
       </Flex>
 
+      {/* Mobile Dropdown Panel (Show below md) */}
       <Show below="md">
-        <Flex
-          pos="fixed"
-          bg="black"
-          w="100%"
-          h="100%"
-          zIndex={2}
-          top="0"
-          left="0"
-          flexDirection="column"
-          as={motion.div}
-          initial={false}
-          animate={isOpen ? "open" : "closed"}
-          variants={containerVariants}
-        >
-          <Stack
-            textAlign="center"
-            spacing={12}
-            fontSize="4xl"
-            margin="auto"
-            as={motion.div}
-            initial={{ x: "100vw" }}
-            variants={childVariants}
+        <Box w="100%" display="flex" justifyContent="center">
+          <motion.div
+            initial="closed"
             animate={isOpen ? "open" : "closed"}
+            variants={menuVariants}
+            style={{
+              width: "92%",
+              marginTop: "8px",
+              pointerEvents: isOpen ? "auto" : "none",
+              zIndex: 999
+            }}
           >
-            <a
-              href="#home"
-              onClick={() => {
-                handleSet();
-                handleCheck();
-              }}
-              style={{ color: "white" }}
+            <Flex
+              direction="column"
+              bg="rgba(26, 26, 26, 0.95)"
+              backdropFilter="blur(16px)"
+              border="1px solid rgba(255, 255, 255, 0.05)"
+              boxShadow="0 20px 40px rgba(0,0,0,0.6)"
+              borderRadius="2xl"
+              p={6}
+              gap={4}
             >
-              <Text as="b"> Home </Text>
-            </a>
-            <a
-              href="#experience"
-              onClick={() => {
-                handleSet();
-                handleCheck();
-              }}
-              style={{ color: "white" }}
-            >
-              <Text as="b"> Experience </Text>
-            </a>
-            <a
-              href="#projects"
-              onClick={() => {
-                handleSet();
-                handleCheck();
-              }}
-              style={{ color: "white" }}
-            >
-              <Text as="b"> Projects </Text>
-            </a>
-            <a
-              href="#skills"
-              onClick={() => {
-                handleSet();
-                handleCheck();
-              }}
-              style={{ color: "white" }}
-            >
-              <Text as="b"> Skills </Text>
-            </a>
-          </Stack>
-        </Flex>
+              {links.map((link, index) => (
+                <Link
+                  key={index}
+                  href={link.href}
+                  onClick={toggleMenu}
+                  _hover={{ textDecoration: "none" }}
+                >
+                  <HStack spacing={3} py={2} borderBottom="1px solid rgba(255,255,255,0.02)">
+                    <Text fontSize="md" fontWeight="bold" color="white" _hover={{ color: "#ff5403" }}>
+                      {link.name}
+                    </Text>
+                  </HStack>
+                </Link>
+              ))}
+            </Flex>
+          </motion.div>
+        </Box>
       </Show>
     </Box>
   );
 }
-//  boxShadow="0 7px 29px 0  rgb(255 84 3 / 30%)"
-// onClick={()  => setIsOpen(!isOpen)}

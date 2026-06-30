@@ -1,171 +1,183 @@
-import { Box, Container, Flex, Heading, Text, VStack } from "@chakra-ui/react";
+import { Box, Container, Flex, Heading, Text, VStack, Tag, TagLabel, Wrap, WrapItem } from "@chakra-ui/react";
 import { motion } from "framer-motion";
 
 const experiences = [
-    {
-        company: "Greatercare",
-        role: "Lead Frontend Developer (Contract)",
-        date: "03/2025",
-        description: [
-            "Developed the frontend for a telemedicine web app, featuring patient booking, dashboards, and payment management."
-        ]
-    },
-    {
-        company: "Pashione",
-        role: "Frontend Engineer",
-        date: "09/2024 – 02/2025",
-        description: [
-            "Optimized frontend of pashione.co marketplace using Next.js and Supabase, and developed real-time features."
-        ]
-    },
-    {
-        company: "Herrand Ltd.",
-        role: "Team Lead - Frontend Developer",
-        date: "08/2024 – 03/2025",
-        description: [
-            "Led dashboard rewrite using React and Firebase, later converted to Electron desktop apps across platforms."
-        ]
-    },
-    {
-        company: "Chaincode Technologies Ltd",
-        role: "Frontend Developer",
-        date: "04/2024 – 07/2024",
-        description: [
-            "Built agricultural database platform and company registration site for farmers."
-        ]
-    },
-    {
-        company: "Trocah",
-        role: "Frontend Web Developer",
-        date: "01/2024 – 05/2024",
-        description: [
-            "Built fintech landing page and currency exchange monitoring dashboard with Next.js."
-        ]
-    },
-    {
-        company: "Yazapay",
-        role: "Frontend Developer",
-        date: "02/2023 – 09/2023",
-        description: [
-            "Developed responsive Yazapay Payment Portal frontend to boost processing efficiency and user satisfaction."
-        ]
-    },
-    {
-        company: "nHub Nigeria",
-        role: "Project Manager & Lead Frontend Developer",
-        date: "05/2022 – 09/2024",
-        description: [
-            "Led frontend and project management for Pandora's Box edtech platform, creating an accessible student dashboard."
-        ]
-    }
+  {
+    company: "Wazi HR",
+    role: "Frontend Team Lead",
+    date: "2025 – 2026",
+    location: "Lagos, Nigeria",
+    description: [
+      "Led frontend development and built the entire frontend and three role-based dashboards for WaziHR (www.wazihr.com), an all-in-one HR, Payroll, and ERP suite, using Next.js, Tailwind CSS, TanStack and supporting libraries.",
+      "Developed a large library of reusable components for Employee, Company, and Core Team views.",
+      "Implemented key modules including personnel management, payroll automation, leave & attendance, performance, recruitment, and self-service portals.",
+      "Built the Core Team dashboard for full system monitoring, access control, and security analysis."
+    ],
+    tags: ["Next.js", "Tailwind CSS", "TanStack", "TypeScript", "ERP"]
+  },
+  {
+    company: "Greatercare",
+    role: "Lead Frontend Developer (Contract)",
+    date: "03/2025",
+    location: "Remote",
+    description: [
+      "Led the frontend development of a telemedicine web app, collaborating with backend and frontend engineers to enable patient-doctor consultations.",
+      "Implemented the design for a management dashboard, supporting admin, doctor, and patient interactions for booking consultations, viewing schedules, managing subscriptions, and processing payments.",
+      "Consumed APIs to facilitate patient booking, consultation views, and subscription tracking.",
+      "Developed the admin dashboard to monitor patient and doctor activities, manage payments, and oversee consultation bookings."
+    ],
+    tags: ["React", "APIs", "CSS", "JavaScript", "Telemedicine"]
+  },
+  {
+    company: "Pashione",
+    role: "Frontend Engineer",
+    date: "09/2024 – 02/2025",
+    location: "Lagos, Nigeria",
+    description: [
+      "Manage and optimize the frontend of a large-scale e-commerce marketplace (pashione.co) using Next.js, TypeScript, and Supabase, adding a product variant display feature and fixing navigation issues.",
+      "Built and maintain the Careers page on the corporate site (corporate.pashione.co) with real-time job updates.",
+      "Developed the Medlitics launch site, adding About Me and FAQ sections, a chatbot, and SEO enhancements.",
+      "Maintain daily responsiveness to client technical needs and improve code performance."
+    ],
+    tags: ["Next.js", "TypeScript", "Supabase", "SEO", "E-commerce"]
+  },
+  {
+    company: "Herrand Ltd.",
+    role: "Team Lead - Frontend Developer",
+    date: "08/2024 – 03/2025",
+    location: "Lagos, Nigeria",
+    description: [
+      "Led the rewrite of a dashboard using React, Tailwind CSS, and Firebase to monitor mobile app interactions (signups, agents, transactions), adding finance tracking, admin privileges, and authentication.",
+      "Converted the optimized web dashboard into Windows, Linux, and Mac desktop apps using Electron for marketing team use; handle ongoing updates and issue resolution.",
+      "Revamped Herrand.com with a clean, accessible UI aligned with the company brand."
+    ],
+    tags: ["React", "Tailwind CSS", "Firebase", "Electron", "Desktop Apps"]
+  },
+
+  {
+    company: "Trocah",
+    role: "Frontend Web Developer",
+    date: "01/2024 – 05/2024",
+    location: "Lagos, Nigeria",
+    description: [
+      "Collaborated on building the company landing page with TypeScript and Next.js for a fintech platform.",
+      "Contributed to a monitoring dashboard tracking currency exchange data (customer evaluations, volumes, valuations).",
+      "Worked with team to integrate frontend with backend systems under the team lead's guidance."
+    ],
+    tags: ["Next.js", "TypeScript", "APIs", "Fintech"]
+  },
+
 ];
 
 export default function ExperienceTree() {
-    return (
-        <Box py={20} bg="#1a1a1a" color="white" id="experience">
-            <Container maxW="container.xl">
-                <Heading
-                    fontSize={{ base: "3xl", md: "5xl" }}
-                    mb={16}
-                    textAlign="center"
-                    position="relative"
-                    _after={{
-                        content: '""',
-                        position: "absolute",
-                        bottom: "-15px",
-                        left: "50%",
-                        transform: "translateX(-50%)",
-                        width: "50px",
-                        height: "4px",
-                        backgroundColor: "#ff5403",
-                        borderRadius: "full"
-                    }}
-                >
-                    Work Journey
+  return (
+    <Box py={20} bg="#1a1a1a" color="white" id="experience">
+      <Container maxW="container.lg">
+        {/* Section Heading */}
+        <Flex align="center" gap={4} mb={16}>
+          <Heading fontSize={{ base: "2xl", md: "3xl" }} color="white">
+            Where I've Worked
+          </Heading>
+          <Box flex="1" h="1px" bg="rgba(255,255,255,0.1)" ml={4} />
+        </Flex>
+
+        <VStack spacing={0} align="stretch">
+          {experiences.map((exp, index) => (
+            <Flex
+              key={index}
+              position="relative"
+              gap={{ base: 4, md: 6 }}
+              as={motion.div}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: "-100px" }}
+              transition={{ duration: 0.5, delay: index * 0.05 }}
+            >
+              {/* Timeline Indicator Column */}
+              <Flex direction="column" align="center" w="24px" flexShrink={0} position="relative">
+                {/* Timeline dot marker */}
+                <Box
+                  w="14px"
+                  h="14px"
+                  borderRadius="full"
+                  border="3px solid"
+                  borderColor="#ff5403"
+                  bg={index === 0 ? "#ff5403" : "#1a1a1a"}
+                  boxShadow={index === 0 ? "0 0 10px rgba(255, 84, 3, 0.6)" : "none"}
+                  zIndex={2}
+                  mt="6px"
+                />
+                {/* Timeline line segment connecting to next dot */}
+                {index < experiences.length - 1 && (
+                  <Box
+                    w="2px"
+                    flex="1"
+                    bg="rgba(255, 255, 255, 0.1)"
+                    position="absolute"
+                    top="20px"
+                    bottom="-32px"
+                    left="50%"
+                    transform="translateX(-50%)"
+                    zIndex={1}
+                  />
+                )}
+              </Flex>
+
+              {/* Content Area */}
+              <Box pb={12} flex="1">
+                {/* Job Title and Company */}
+                <Heading fontSize={{ base: "lg", md: "xl" }} fontWeight="bold" color="white" mb={2}>
+                  {exp.role}{" "}
+                  <Text as="span" color="#ff5403">
+                    @ {exp.company}
+                  </Text>
                 </Heading>
 
-                <Box position="relative" maxW="4xl" mx="auto">
-                    {/* Vertical Line */}
-                    <Box
-                        position="absolute"
-                        left={{ base: "20px", md: "50%" }}
-                        transform={{ base: "none", md: "translateX(-50%)" }}
-                        top="0"
-                        bottom="0"
-                        w="2px"
-                        bg="rgba(255,255,255,0.1)"
-                    />
+                {/* Dates & Location */}
+                <Flex gap={2} fontSize="sm" fontFamily="mono" color="gray.400" mb={4} align="center" flexWrap="wrap">
+                  <Text>{exp.date}</Text>
+                  <Text color="gray.600">•</Text>
+                  <Text>{exp.location}</Text>
+                </Flex>
 
-                    <VStack spacing={12} align="stretch">
-                        {experiences.map((exp, index) => (
-                            <Flex
-                                as={motion.div}
-                                initial={{ opacity: 0, y: 50 }}
-                                whileInView={{ opacity: 1, y: 0 }}
-                                viewport={{ once: true, margin: "-50px" }}
-                                transition={{ duration: 0.5 }}
-                                key={index}
-                                direction={{ base: "column", md: index % 2 === 0 ? "row" : "row-reverse" }}
-                                position="relative"
-                                w="100%"
-                            >
-                                {/* Node Dot */}
-                                <Box
-                                    position="absolute"
-                                    left={{ base: "20px", md: "50%" }}
-                                    top={{ base: "24px", md: "0" }}
-                                    transform={{ "base": "translateX(-50%)", "md": "translate(-50%, 0)" }}
-                                    w="16px"
-                                    h="16px"
-                                    bg="#ff5403"
-                                    border="none"
-                                    boxShadow="0 0 10px rgba(255,84,3,0.8), inset 2px 2px 5px rgba(255,255,255,0.3)"
-                                    borderRadius="full"
-                                    zIndex={1}
-                                />
+                {/* Bullet points */}
+                <VStack align="stretch" spacing={3} mb={5}>
+                  {exp.description.map((bullet, i) => (
+                    <Flex key={i} gap={3} align="start">
+                      <Text color="#ff5403" fontSize="sm" lineHeight="1.3">▹</Text>
+                      <Text color="gray.300" fontSize="sm" md="md" lineHeight="1.6">
+                        {bullet}
+                      </Text>
+                    </Flex>
+                  ))}
+                </VStack>
 
-                                {/* Content Box */}
-                                <Box
-                                    w={{ base: "calc(100% - 40px)", md: "45%" }}
-                                    ml={{ base: "40px", md: 0 }}
-                                    p={8}
-                                    bg="#1a1a1a"
-                                    border="none"
-                                    boxShadow="8px 8px 16px rgba(0,0,0,0.8), -8px -8px 16px rgba(255,255,255,0.05)"
-                                    borderRadius="2xl"
-                                    position="relative"
-                                    _hover={{
-                                        transform: "translateY(-5px)",
-                                        boxShadow: "10px 10px 20px rgba(0,0,0,0.9), -10px -10px 20px rgba(255,255,255,0.06)"
-                                    }}
-                                    transition="all 0.3s ease"
-                                >
-                                    <Text color="#ff5403" fontWeight="600" fontSize="sm" mb={2}>
-                                        {exp.date}
-                                    </Text>
-                                    <Heading fontSize="2xl" mb={1} color="white">
-                                        {exp.company}
-                                    </Heading>
-                                    <Text color="gray.400" fontSize="lg" fontWeight="500" mb={6}>
-                                        {exp.role}
-                                    </Text>
-
-                                    <VStack align="start" spacing={3}>
-                                        {exp.description.map((item, i) => (
-                                            <Flex key={i} align="start" gap={3}>
-                                                <Box w="6px" h="6px" borderRadius="full" bg="gray.500" mt="8px" flexShrink={0} />
-                                                <Text color="gray.300" fontSize="md" lineHeight="1.6">
-                                                    {item}
-                                                </Text>
-                                            </Flex>
-                                        ))}
-                                    </VStack>
-                                </Box>
-                            </Flex>
-                        ))}
-                    </VStack>
-                </Box>
-            </Container>
-        </Box>
-    );
+                {/* Technology Tags */}
+                <Wrap spacing={2}>
+                  {exp.tags.map((tag, i) => (
+                    <WrapItem key={i}>
+                      <Tag
+                        size="md"
+                        variant="subtle"
+                        bg="rgba(255, 84, 3, 0.08)"
+                        color="rgba(255, 84, 3, 0.9)"
+                        borderRadius="full"
+                        border="1px solid rgba(255, 84, 3, 0.15)"
+                        px={3}
+                        py={1}
+                      >
+                        <TagLabel fontSize="xs" fontWeight="semibold" fontFamily="mono">
+                          {tag}
+                        </TagLabel>
+                      </Tag>
+                    </WrapItem>
+                  ))}
+                </Wrap>
+              </Box>
+            </Flex>
+          ))}
+        </VStack>
+      </Container>
+    </Box>
+  );
 }
