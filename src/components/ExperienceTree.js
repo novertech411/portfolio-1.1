@@ -3,6 +3,18 @@ import { motion } from "framer-motion";
 
 const experiences = [
   {
+    company: "Geodel.AI",
+    role: " Engineering Lead",
+    date: "2026",
+    location: "Remote",
+    description: [
+      "Led frontend architecting the full stack for Geodel's AI-powered subsurface intelligence platform, using Next.js, Supabase, and Plotly.js to convert geophysical (ERT) survey data into decision-ready models and risk interpretations.",
+      "integrated Anthropic Claude API and Ollama for AI-driven geological analysis, and designed the Supabase backend for authentication, data persistence, and analysis retrieval.",
+      "Developed interactive time-lapse visualizations and diagnosed a major performance bottleneck in large-file uploads, cutting backend payload size by moving summarization to the client."
+    ],
+    tags: ["Next.js", "Tailwind CSS", "TanStack", "TypeScript", "Claude API", "Ollama", "Plotly.js", "Supabase"]
+  },
+  {
     company: "Wazi HR",
     role: "Frontend Team Lead",
     date: "2025 – 2026",
@@ -14,6 +26,18 @@ const experiences = [
       "Built the Core Team dashboard for full system monitoring, access control, and security analysis."
     ],
     tags: ["Next.js", "Tailwind CSS", "TanStack", "TypeScript", "ERP"]
+  },
+  {
+    company: "Soval Labs",
+    role: "Frontend Engineer Contract",
+    date: "2025",
+    location: "Lagos, Nigeria",
+    description: [
+      "Led Part of the team that built a loan management and monitoring platform for a Nigerian bank, enabling tracking, analysis, and evaluation of disbursements, repayments, and beneficiaries, using Next.js, Chakra UI, TanStack, and Axios.",
+      "Implemented multiple role-based dashboards spanning the full approval flow, from Executive Directors to Risk Analysts to Checkpoint Officers, each with tailored views and permissions.",
+      "Replicated and adapted the platform architecture for additional loan programs, enabling rapid rollout across multiple initiatives.",
+    ],
+    tags: ["Next.js", "Chakra UI", "TanStack", "TypeScript", "ERP"]
   },
   {
     company: "Greatercare",

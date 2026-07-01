@@ -1,27 +1,64 @@
 import { Box, Container, Flex, Heading, Text, SimpleGrid, Badge, Icon, HStack } from "@chakra-ui/react";
 import { motion } from "framer-motion";
-import { FiCode, FiCpu, FiTrendingUp, FiFolder, FiBookOpen } from "react-icons/fi";
+import { FiCode, FiCpu, FiTrendingUp, FiFolder, FiBookOpen, FiServer, FiZap, FiBarChart2, FiGitBranch } from "react-icons/fi";
 
 const skillCategories = [
     {
-        title: "Languages & Core",
+        title: "Languages",
         icon: FiCode,
-        skills: ["HTML", "CSS", "JavaScript", "TypeScript", "Sass", "jQuery"]
+        skills: ["HTML5", "CSS3", "JavaScript (ES6+)", "TypeScript", "Sass", "SQL"]
     },
     {
-        title: "Technologies & Frameworks",
+        title: "Frontend Technologies",
         icon: FiCpu,
-        skills: ["React", "Next.js", "Tailwind CSS", "Chakra-UI", "Material UI", "Firebase", "Electron", "Netlify", "Postman", "Strapi", "Supabase", "Git"]
+        skills: ["React.js", "Next.js", "Vue.js", "Tailwind CSS", "Chakra UI", "Material UI", "Electron", "TanStack Query"]
+    },
+    {
+        title: "Backend & APIs",
+        icon: FiServer,
+        skills: ["REST APIs", "Supabase", "Firebase", "Axios", "Authentication", "API Integration"]
+    },
+    {
+        title: "AI & Developer Tools",
+        icon: FiZap,
+        skills: [
+            "LLM Integration",
+            "Anthropic Claude API",
+            "Ollama",
+            "OpenAI Codex API",
+            "Prompt Engineering",
+            "AI Workflow Design",
+            "AI-assisted Development",
+            "AI-powered Data Analysis"
+        ]
+    },
+    {
+        title: "Data Visualization",
+        icon: FiBarChart2,
+        skills: ["Plotly.js", "Interactive Dashboards", "Data Visualization"]
+    },
+    {
+        title: "Development Tools",
+        icon: FiGitBranch,
+        skills: ["Git", "GitHub", "Postman", "Vite", "Netlify", "Strapi"]
     },
     {
         title: "Project Management",
         icon: FiTrendingUp,
-        skills: ["Agile Methodologies", "ClickUp", "Jira"]
+        skills: ["Agile Methodologies", "Jira", "ClickUp"]
     },
     {
         title: "Other Skills",
         icon: FiFolder,
-        skills: ["API Integration", "Communication", "Problem-Solving", "SEO"]
+        skills: [
+            "Performance Optimization",
+            "SEO",
+            "Responsive Design",
+            "Component Libraries",
+            "System Design",
+            "Problem Solving",
+            "Communication"
+        ]
     }
 ];
 

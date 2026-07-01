@@ -27,7 +27,7 @@ import ExperienceTree from "../components/ExperienceTree";
 import SkillsAndEducation from "../components/SkillsAndEducation";
 import Contact from "./Contact";
 import "../components/bubble.css";
-import resuma from "../assets/resuma/Emmanuel sholaye.pdf";
+import resuma from "../assets/resuma/Eyinmosan_Sholaye_new.pdf";
 
 // A beautiful, interactive syntax-highlighted code editor mockup
 const CodeBox = () => {
