@@ -25,7 +25,14 @@ const config = {
   useSystemColorMode: false,
 };
 
-const theme = extendTheme({ colors, config });
+const theme = extendTheme({
+  colors,
+  config,
+  fonts: {
+    heading: `'Poppins', 'Outfit', -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif`,
+    body: `'Poppins', 'Outfit', -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif`,
+  }
+});
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>

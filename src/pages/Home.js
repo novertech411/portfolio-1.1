@@ -108,7 +108,7 @@ const CodeBox = () => {
           {"\n"}
           <Text as="span" color="#e06c75">  experience</Text>
           <Text as="span" color="white">: </Text>
-          <Text as="span" color="#98c379">"4+ Years"</Text>
+          <Text as="span" color="#98c379">"6+ Years"</Text>
           <Text as="span" color="white">,</Text>
           {"\n"}
           <Text as="span" color="#e06c75">  skills</Text>
@@ -202,7 +202,7 @@ export default function Home() {
             >
               <Box>
                 <Text fontSize={{ base: "3xl", md: "4xl" }} fontWeight="800" color="#ff5403" lineHeight="1">
-                  4+
+                  6+
                 </Text>
                 <Text fontSize="xs" color="gray.400" mt={1} fontWeight="medium" textTransform="uppercase" letterSpacing="wider">
                   Years Experience
