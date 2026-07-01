@@ -39,6 +39,7 @@ const CodeBox = () => {
       transition={{ duration: 0.8, delay: 0.2 }}
       w="100%"
       maxW={{ base: "100%", md: "500px", lg: "520px" }}
+      minW={0}
       bg="#121212"
       borderRadius="2xl"
       boxShadow="0 25px 50px -12px rgba(0, 0, 0, 0.7), 8px 8px 16px rgba(0,0,0,0.8), -8px -8px 16px rgba(255,255,255,0.02)"
@@ -81,7 +82,7 @@ const CodeBox = () => {
       </Flex>
 
       {/* Editor Body */}
-      <Flex p={5} overflowX="auto" fontSize={{ base: "xs", md: "sm" }} fontFamily="mono" lineHeight="1.6" textAlign="left">
+      <Flex p={5} overflowX="auto" fontSize={{ base: "xs", md: "sm" }} fontFamily="mono" lineHeight="1.6" textAlign="left" minW={0}>
         {/* Line Numbers */}
         <VStack spacing={0} align="flex-end" pr={4} color="gray.600" userSelect="none" borderRight="1px solid rgba(255, 255, 255, 0.05)">
           {Array.from({ length: 18 }, (_, i) => (
@@ -90,7 +91,7 @@ const CodeBox = () => {
         </VStack>
 
         {/* Code Content */}
-        <Box pl={4} flex="1" whiteSpace="pre">
+        <Box pl={4} flex="1" whiteSpace="pre" minW={0}>
           <Text as="span" color="#c678dd">const </Text>
           <Text as="span" color="#e5c07b">developer </Text>
           <Text as="span" color="#56b6c2">= </Text>
@@ -305,7 +306,7 @@ export default function Home() {
             </Flex>
           </Box>
 
-          <Box flex="0.8" display="flex" justifyContent={{ base: "center", lg: "flex-end" }}>
+          <Box flex="0.8" w="100%" display="flex" justifyContent={{ base: "center", lg: "flex-end" }} minW={0}>
             <CodeBox />
           </Box>
         </Flex>
